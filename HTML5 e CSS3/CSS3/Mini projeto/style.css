@@ -1,0 +1,85 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: 'idroid';
+    src: url('pacote-projeto-d010/fontes/idroid.otf') format('opentype');
+}
+
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(111, 223, 180);
+}
+
+
+/*Cabeçalho*/
+h1#cabecalho {
+    text-align: center;
+    font-size: 24px;
+    color: white;
+}
+
+pre > p {
+    text-align: center;
+    color: white;   
+    font-size: 16px;
+}
+
+header{
+    background-image: linear-gradient(to bottom, rgb(7, 204, 89), rgb(23, 71, 43));
+    padding: 20px 30px;
+}
+
+nav {
+    color: white;
+}
+
+nav > a {
+    text-decoration: none;
+    color: white;
+    padding: 10px 5px;
+}
+
+main {
+    display: inline-block;
+    background-color: white;
+    padding: 10px 20px;
+    align: center;
+}
+
+aside {
+    background-color: rgba(51, 223, 143, 0.301);
+}
+
+aside > header {
+    background-color: rgb(79, 175, 111);
+    color: white;
+    border-radius: 5px 5px 0px 0px;
+}
+
+pre > a {
+    text-decoration: none;
+    color: black;
+    padding-right: 100px;
+}
+
+footer {
+    color: rgba(255, 255, 255, 0.63);
+    background-color: rgb(23, 71, 43);
+    text-align: center;
+}
+
+.titulos {
+    color:rgb(23, 71, 43);
+    font-family: idroid;
+    text-align: justify;
+}
+
+.subtitulos {
+    background-color: rgba(61, 196, 61, 0.445);
+}
+
+.marcacao {
+    color: rgb(23, 71, 43);
+    font-weight: bold;
+}

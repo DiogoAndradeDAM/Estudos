@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fontes Externas baixadas</title>
+    <style>
+        @font-face{
+            font-family: 'Enchanted Land';
+            src: url('fontes/Enchanted Land.otf') format('opentype')/* url() format(), url format()*/;
+            font-weight: normal;
+            font-style: normal;
+
+            /*
+            Tipos de format()
+            - opentype (otf)
+            - truetype (ttf)
+            - embeded-opentype
+            - truetype-aat (Apple Advanced Typography)
+            - svg
+            */
+        }
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: black;
+        }
+        h1 {
+            font-family: 'Enchanted Land';
+            font-size: 4em;
+            font-weight: normal;
+        }
+    </style>
+</head>
+<body>
+    <!--Dadonte site-->
+    <h1>Título</h1>
+    <h2>Subtítulo</h2>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit est ea magni tempora vero libero ut non illum, nemo, voluptatibus eaque sunt unde iure laborum quos accusantium debitis odio nulla.</p>
+</body>
+</html>
