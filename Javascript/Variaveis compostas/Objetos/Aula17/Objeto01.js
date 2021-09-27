@@ -9,4 +9,7 @@ let amigo = {
 }
 
 amigo.engordar(2)
+delete amigo.nome
+amigo.nome = "Diogo"
 console.log(`${amigo.nome} pesa ${amigo.peso}Kg`)
+console.log(Object.keys(amigo))
