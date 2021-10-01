@@ -1,0 +1,6 @@
+ Até agora programamos de uma maneira que uma ação acontecia após a outra
+
+ A programação assícrona batalha nesta questão, ações podem ser executadas ao tempo sem uma 'fila'
+
+ Um exemplo: Usuário está co checkout, manda salvar seu endereço na conta, mas pode prosseguir para a finalização sem recarregar a página, pois adicionar endereço ocorre de forma assíncrona
+ 
