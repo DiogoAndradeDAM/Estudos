@@ -1,0 +1,13 @@
+C:\Users\dougl\Desktop\zEstudos paralelos\Programação\C#\projetoTeste\bin\Debug\netcoreapp3.1\projetoTeste.exe
+C:\Users\dougl\Desktop\zEstudos paralelos\Programação\C#\projetoTeste\bin\Debug\netcoreapp3.1\projetoTeste.deps.json
+C:\Users\dougl\Desktop\zEstudos paralelos\Programação\C#\projetoTeste\bin\Debug\netcoreapp3.1\projetoTeste.runtimeconfig.json
+C:\Users\dougl\Desktop\zEstudos paralelos\Programação\C#\projetoTeste\bin\Debug\netcoreapp3.1\projetoTeste.runtimeconfig.dev.json
+C:\Users\dougl\Desktop\zEstudos paralelos\Programação\C#\projetoTeste\bin\Debug\netcoreapp3.1\projetoTeste.dll
+C:\Users\dougl\Desktop\zEstudos paralelos\Programação\C#\projetoTeste\bin\Debug\netcoreapp3.1\projetoTeste.pdb
+C:\Users\dougl\Desktop\zEstudos paralelos\Programação\C#\projetoTeste\obj\Debug\netcoreapp3.1\projetoTeste.csprojAssemblyReference.cache
+C:\Users\dougl\Desktop\zEstudos paralelos\Programação\C#\projetoTeste\obj\Debug\netcoreapp3.1\projetoTeste.AssemblyInfoInputs.cache
+C:\Users\dougl\Desktop\zEstudos paralelos\Programação\C#\projetoTeste\obj\Debug\netcoreapp3.1\projetoTeste.AssemblyInfo.cs
+C:\Users\dougl\Desktop\zEstudos paralelos\Programação\C#\projetoTeste\obj\Debug\netcoreapp3.1\projetoTeste.csproj.CoreCompileInputs.cache
+C:\Users\dougl\Desktop\zEstudos paralelos\Programação\C#\projetoTeste\obj\Debug\netcoreapp3.1\projetoTeste.dll
+C:\Users\dougl\Desktop\zEstudos paralelos\Programação\C#\projetoTeste\obj\Debug\netcoreapp3.1\projetoTeste.pdb
+C:\Users\dougl\Desktop\zEstudos paralelos\Programação\C#\projetoTeste\obj\Debug\netcoreapp3.1\projetoTeste.genruntimeconfig.cache
