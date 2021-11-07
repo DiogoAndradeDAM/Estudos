@@ -1,0 +1,3 @@
+﻿  printf.cpp
+printf.obj : error LNK2005: _main already defined in EstudosCpp.obj
+C:\Users\dougl\Desktop\zEstudos paralelos\Programação\C++\EstudosCpp\Debug\EstudosCpp.exe : fatal error LNK1169: one or more multiply defined symbols found

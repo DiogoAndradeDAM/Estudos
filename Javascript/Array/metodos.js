@@ -81,3 +81,9 @@ let palavras = frase.split(" ");
 let novaFrase = palavras.join("")
 console.log(novaFrase)
 */
+
+/* Faz com que cada letra de um Array vire um elemento em um array
+
+let string = "Diogo"
+console.log(Array.from(string))
+*/

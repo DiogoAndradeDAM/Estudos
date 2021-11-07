@@ -46,3 +46,10 @@ console.log(novaFrase)
 let palavra = "Olá, Mundo!";
 console.log(palavra.repeat(2))
 */
+
+/* Caixa alta e baixa
+let string = "Ola"
+console.log(string.toLowerCase())
+
+console.log(string.toUpperCase())
+*/

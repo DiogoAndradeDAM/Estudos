@@ -16,3 +16,9 @@ console.log(txt3)
 console.log(txt4)
 */
 
+/* analisa se tem a palavra na string
+
+let string = "Onde está Pompeu"
+console.log(string.includes("Pompeu"))
+
+*/
