@@ -5,3 +5,4 @@ console.log(a.getAttribute("href"))
 let link = "https://www.horadecodar.com.br"
 
 a.setAttribute("href", link)
+// Para remover atributos removeAttribute()
