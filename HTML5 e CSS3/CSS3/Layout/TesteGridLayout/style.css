@@ -1,0 +1,55 @@
+body{
+  display: grid;
+  margin: 0px;
+  height: 100vh;
+
+  grid-template-areas:
+  "header header"
+  "main aside"
+  "footer footer";
+  grid-template-columns: 1fr 80px;
+  grid-template-rows: 100px 1fr 50px;
+}
+
+header{
+  background-color: red;
+  grid-area: header;
+}
+
+main{
+  display: grid;
+  background-color: greenyellow;
+  grid-area: main;
+  grid-template-areas: 
+  "cima1 cima2 cima3"
+  "meio1 meio2 meio3"
+  "baixo2 baixo2 baixo2";
+  grid-template-columns: 300px 300px 00px;
+  grid-template-rows: 300px 300px 200px;
+}
+
+.box-div{
+  background-color: white;
+  width: 200px;
+  height: 200px;
+  margin: 10px;
+}
+
+#div1{
+  margin: 70px 10px;
+}
+
+button{
+  width: 50px;
+  height: 20px;
+}
+
+aside{
+  background-color: blue;
+  grid-area: aside;
+}
+
+footer{
+  background-color: grey;
+  grid-area: footer;
+}

@@ -1,0 +1,41 @@
+body{
+  margin: 0;
+}
+
+header{
+  display: flex;
+  background-color: gray;
+  height: 10vh;
+
+  justify-content: space-between;
+  align-items: center;
+}
+
+header > div{
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+nav{
+  display: flex;
+
+  align-items: center;
+  gap: .8rem;
+}
+
+.menu-item{
+
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color:lightcoral;
+}
+
+.menu-item:hover{
+  background-color: lightseagreen;
+}
+
+nav div:nth-child(5){
+  background-color: hotpink;
+  color:ivory;
+  text-align: center;
+  margin-right: 10px;
+}
