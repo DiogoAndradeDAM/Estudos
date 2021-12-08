@@ -4,7 +4,7 @@
   "description": "Aprendendo NPM",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "Node index.js"
   },
   "keywords": [
     "learning",
