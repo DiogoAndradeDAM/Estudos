@@ -1,5 +1,0 @@
-N = str(input("Digite um numero etre 0 a 9999 "))
-print("Milhar", N [0])
-print("Centena", N [1])
-print("Dezena", N [2])
-print("Unidade", N [3])
