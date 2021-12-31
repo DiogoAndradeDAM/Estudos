@@ -1,0 +1,15 @@
+C:\Users\dougl\Desktop\Estudos paralelos\Programação\C#\FundamentosC#\Conversao\bin\Debug\net6.0\Conversao.exe
+C:\Users\dougl\Desktop\Estudos paralelos\Programação\C#\FundamentosC#\Conversao\bin\Debug\net6.0\Conversao.deps.json
+C:\Users\dougl\Desktop\Estudos paralelos\Programação\C#\FundamentosC#\Conversao\bin\Debug\net6.0\Conversao.runtimeconfig.json
+C:\Users\dougl\Desktop\Estudos paralelos\Programação\C#\FundamentosC#\Conversao\bin\Debug\net6.0\Conversao.dll
+C:\Users\dougl\Desktop\Estudos paralelos\Programação\C#\FundamentosC#\Conversao\bin\Debug\net6.0\ref\Conversao.dll
+C:\Users\dougl\Desktop\Estudos paralelos\Programação\C#\FundamentosC#\Conversao\bin\Debug\net6.0\Conversao.pdb
+C:\Users\dougl\Desktop\Estudos paralelos\Programação\C#\FundamentosC#\Conversao\obj\Debug\net6.0\Conversao.csproj.AssemblyReference.cache
+C:\Users\dougl\Desktop\Estudos paralelos\Programação\C#\FundamentosC#\Conversao\obj\Debug\net6.0\Conversao.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\dougl\Desktop\Estudos paralelos\Programação\C#\FundamentosC#\Conversao\obj\Debug\net6.0\Conversao.AssemblyInfoInputs.cache
+C:\Users\dougl\Desktop\Estudos paralelos\Programação\C#\FundamentosC#\Conversao\obj\Debug\net6.0\Conversao.AssemblyInfo.cs
+C:\Users\dougl\Desktop\Estudos paralelos\Programação\C#\FundamentosC#\Conversao\obj\Debug\net6.0\Conversao.csproj.CoreCompileInputs.cache
+C:\Users\dougl\Desktop\Estudos paralelos\Programação\C#\FundamentosC#\Conversao\obj\Debug\net6.0\Conversao.dll
+C:\Users\dougl\Desktop\Estudos paralelos\Programação\C#\FundamentosC#\Conversao\obj\Debug\net6.0\ref\Conversao.dll
+C:\Users\dougl\Desktop\Estudos paralelos\Programação\C#\FundamentosC#\Conversao\obj\Debug\net6.0\Conversao.pdb
+C:\Users\dougl\Desktop\Estudos paralelos\Programação\C#\FundamentosC#\Conversao\obj\Debug\net6.0\Conversao.genruntimeconfig.cache

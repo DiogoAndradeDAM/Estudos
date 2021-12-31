@@ -15,29 +15,15 @@ class Program
       Console.Write("\n$_");
       short choose = Convert.ToInt16(Console.ReadLine());
 
-      if (choose == 0)
-      {
-        Console.WriteLine("Encerrando Programa (||...)");
-        break;
-      }
-
-      Console.WriteLine("+-----------------------------+");
-      Console.Write("Digite o primeiro numero: ");
-      int numChoose = Convert.ToInt32(Console.ReadLine());
-
-      Console.Write("Digite o segundo numero: ");
-      int numChoose2 = Convert.ToInt32(Console.ReadLine());
-
+      //Saida de dados do programa
       switch (choose)
       {
-        case 0: break;
-        case 1: Console.WriteLine($"A soma dos números é: {Soma(numChoose, numChoose2)}"); break;
-        case 2: Console.WriteLine($"A subtração dos números é: {Sub(numChoose, numChoose2)}"); break;
-        case 3: Console.WriteLine($"A Divisão dos números é: {Div(numChoose, numChoose2)}"); break;
-        case 4: Console.WriteLine($"A Multiplicação dos números é: {Multi(numChoose, numChoose2)}"); break;
+        case 0: Console.WriteLine("Encerrando Programa (.....)");return;
+        case 1: Console.WriteLine($"A soma dos números é: {Calculadora.Soma()}"); break;
+        case 2: Console.WriteLine($"A subtração dos números é: {Calculadora.Sub()}"); break;
+        case 3: Console.WriteLine($"A Divisão dos números é: {Calculadora.Div()}"); break;
+        case 4: Console.WriteLine($"A Multiplicação dos números é: {Calculadora.Multi()}"); break;
       }
-
-      Console.WriteLine("+-----------------------------+");
     }
   }
 
@@ -57,20 +43,39 @@ class Program
     }
   }
 
-  public static int Soma(int num, int num2)
+  struct Calculadora
   {
-    return num + num2;
+    //Primeira pergunta
+    private static int Ask1(){
+      Console.WriteLine("+-----------------------------+");
+      Console.Write("Digite o primeiro numero: ");
+      int numChoose = Convert.ToInt32(Console.ReadLine());
+      return numChoose;
+    }
+    //Segunda pergunta
+    private static int Ask2(){
+      Console.Write("Digite o segundo numero: ");
+      int numChoose2 = Convert.ToInt32(Console.ReadLine());
+      Console.WriteLine("+-----------------------------+");
+      return numChoose2;
+    }
+    //Saida de dados da calculadora
+    public static int Soma()
+    {
+      return Ask1() + Ask2();
+    }
+    public static int Sub()
+    {
+      return Ask1() - Ask2();
+    }
+    public static int Multi()
+    {
+      return Ask1() * Ask2();
+    }
+    public static int Div()
+    {
+      return Ask1() / Ask2();
+    }
   }
-  public static int Sub(int num, int num2)
-  {
-    return num - num2;
-  }
-  public static int Multi(int num, int num2)
-  {
-    return num * num2;
-  }
-  public static int Div(int num, int num2)
-  {
-    return num / num2;
-  }
+
 }
