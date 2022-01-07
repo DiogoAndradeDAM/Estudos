@@ -1,0 +1,18 @@
+O git é divido em 3 áreas{
+-Área de projeto (desenvolvimento)
+-Stage area (área de transferencia)
+-Commited area (área onde está a versão)
+}
+
+comandos git{
+init: inicia um arquivo git em um diretório
+add [arquive]: adiciona arquivos e diretórios a stage area
+commit: faz um commit dos arquivos na stage area
+status: mostra o status das áreas do git
+log: mostra as versões do projeto na Commited area
+checkout [code version]: muda para qual versão o git está apontado(HEAD) referente ao código colocado. Master no lugar do código, volta para a última versão
+}
+
+commit atributos:
+-m: (message) adiciona uma mensagem ao commit;
+-a: (add) funciona igual ao comando 'add', mas só funciona para arquivos que já passaram pelo git
