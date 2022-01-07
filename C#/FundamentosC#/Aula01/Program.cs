@@ -13,7 +13,8 @@ class Program
       Menu(listOption);
 
       Console.Write("\n$_");
-      short choose = Convert.ToInt16(Console.ReadLine());
+      short choose = short.Parse(Console.ReadLine());
+      Console.Clear();
 
       //Saida de dados do programa
       switch (choose)
@@ -24,6 +25,8 @@ class Program
         case 3: Console.WriteLine($"A Divisão dos números é: {Calculadora.Div()}"); break;
         case 4: Console.WriteLine($"A Multiplicação dos números é: {Calculadora.Multi()}"); break;
       }
+      Pause();
+      
     }
   }
 
@@ -49,13 +52,13 @@ class Program
     private static int Ask1(){
       Console.WriteLine("+-----------------------------+");
       Console.Write("Digite o primeiro numero: ");
-      int numChoose = Convert.ToInt32(Console.ReadLine());
+      int numChoose = int.Parse(Console.ReadLine());
       return numChoose;
     }
     //Segunda pergunta
     private static int Ask2(){
       Console.Write("Digite o segundo numero: ");
-      int numChoose2 = Convert.ToInt32(Console.ReadLine());
+      int numChoose2 = int.Parse(Console.ReadLine());
       Console.WriteLine("+-----------------------------+");
       return numChoose2;
     }
@@ -76,6 +79,11 @@ class Program
     {
       return Ask1() / Ask2();
     }
+    
+  }
+  public static void Pause(){
+    Console.ReadKey();
+    Console.Clear();
   }
 
 }
