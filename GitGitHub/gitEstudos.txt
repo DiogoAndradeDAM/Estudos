@@ -4,6 +4,11 @@ O git é divido em 3 áreas{
 -Commited area (área onde está a versão)
 }
 
+branchs(ramos){
+  branchs são ramos em que o desenvolvimento do seu projeto pode ter, o projeto sempre começa com a branch principal chamada MASTER, mas você pode criar outras branchs que suas modificações não alterará o projeto principal, porém os commits destas branchs, ainda terão ligação as branchs da MASTER antes da criação da nova branch.
+  Você poderá juntar os commits de outras branchs a MASTER, isto se chama 'merge'. Se não ouve modificações a MASTER durante a modificação do outro commit, este poderá ser anexado sem problema, este processo se chama fast-forward. Caso ao fazer um merge de uma branch secundária será criado na linha do tempo da MASTER um commit chamado merge e nele poderá ter duas situações: A primeira onde não houve conflitos com o código já existente e o código commitado será colocado sem nenhuma problema e a segunda situação onde houve um conflito e o git irá exibir os códigos que deram conflito para que o conflito seja consertado, para que assim o código da branch secundária seja incrementada a MASTER
+}
+
 comandos git{
 init: inicia um arquivo git em um diretório
 add [arquive]: adiciona arquivos e diretórios a stage area
@@ -14,9 +19,12 @@ checkout [code version]: muda para qual versão o git está apontado(HEAD) refer
 clone [link]: clona um repositório do gitHub na máquina a partir do link dele
 push: leva arquivos do repositório local para o gitHub
 pull: traz arquivos do gitHub para o repositório local
-
+restore: dicarta mudanças feitas em arquivos no ambiente de desenvolvimento
 }
 
 commit atributos:
 -m: (message) adiciona uma mensagem ao commit;
 -a: (add) funciona igual ao comando 'add', mas só funciona para arquivos que já passaram pelo git
+
+restore atributos:
+--staged: retira arquivos da stage area
