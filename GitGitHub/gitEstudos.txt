@@ -11,6 +11,10 @@ commit: faz um commit dos arquivos na stage area
 status: mostra o status das áreas do git
 log: mostra as versões do projeto na Commited area
 checkout [code version]: muda para qual versão o git está apontado(HEAD) referente ao código colocado. Master no lugar do código, volta para a última versão
+clone [link]: clona um repositório do gitHub na máquina a partir do link dele
+push: leva arquivos do repositório local para o gitHub
+pull: traz arquivos do gitHub para o repositório local
+
 }
 
 commit atributos:
