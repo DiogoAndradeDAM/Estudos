@@ -29,21 +29,17 @@ int main()
     {
       while (1)
       {
-        printf("digite a linha que voce quer colocar [|1 | 2 | 3]: \n");
+        printf("digite a linha que voce quer colocar [1 | 2 | 3]: \n");
         scanf("%hi", &y);
         if (y > 0 && y < 4)
-        {
           break;
-        }
       }
       while (1)
       {
         printf("Digite a coluna que voce quer colocar [1 | 2 | 3]: \n");
         scanf("%hi", &x);
         if (x > 0 && x < 4)
-        {
           break;
-        }
       }
       //Avaliando se pode colocar valor no espaço
       y--;
