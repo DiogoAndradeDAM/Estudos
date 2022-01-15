@@ -5,8 +5,8 @@
 int main()
 {
   char posicao[3][3] = {{' ', ' ', ' '}, {' ', ' ', ' '}, {' ', ' ', ' '}};
-  short int y, x, ybot, xbot, teste = 0;
-  char vencedor, enter;
+  short int y, x, ybot, xbot;
+  char vencedor,verySecret;
 
   srand(time(NULL));
 
@@ -164,12 +164,14 @@ int main()
     }
   }
 
+  //Final do jogo
   printf(" %c | %c | %c\n", posicao[0][0], posicao[0][1], posicao[0][2]);
   printf("------------\n");
   printf(" %c | %c | %c\n", posicao[1][0], posicao[1][1], posicao[1][2]);
   printf("------------\n");
   printf(" %c | %c | %c\n", posicao[2][0], posicao[2][1], posicao[2][2]);
 
+  //Vendo quem venceu ou se deu empate
   if (vencedor == 'j')
   {
     printf("\nParabens voce venceu!\n");
