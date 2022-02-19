@@ -6,8 +6,8 @@ console.log(`Random com multiplicação: ${Math.random() * 10}`);
 
 
 //Então usaremos o metodo floor para conseguirmos números inteiros
-console.log(`Random com floor: ${Math.floor(Math.random() * 10)}`);
+console.log(`Random com floor: ${Math.floor(Math.random() * 10)}`); //0 a 9
 
 //Também podemos colocar numeros do lado de fora para fazermos uma adição ou subtração e mudar os valores que seram sorteados
-console.log(`Random com adição: ${Math.floor(Math.random()*10)+1}`)
-console.log(`Random com subtração: ${Math.floor(Math.random()*10)-1}`)
+console.log(`Random com adição: ${Math.floor(Math.random()*10)+1}`) //1 a 10
+console.log(`Random com subtração: ${Math.floor(Math.random()*10)-1}`)// -1 a 8

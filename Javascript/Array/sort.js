@@ -10,7 +10,7 @@ const fruits = ["Banana", "Orange", "Apple", "Mango"];
 console.log(fruits.reverse());
 */
 
-/* Serve para organizar arrays em ordem alfabética dependendo se o valor retornado na função for positve, negative ou 0. Por exemplo: No caso da lista abaixo as variáveis ficam a= 40 e b = 100, 
+/* Serve para organizar arrays em ordem alfabética dependendo se o valor retornado na função for positvo, negativo ou 0. Por exemplo: No caso da lista abaixo as variáveis ficam a= 40 e b = 100, 
  - caso o valor retornado seja positive á lista é organizada em ordem decrescente
  -caso o valor retornado seja negative á lista é organizada em ordem crescente
  -caso o valor retornado seja 0 não ocorre alteração de valores

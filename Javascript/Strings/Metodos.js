@@ -2,8 +2,9 @@
 let texto = '    A verdade será dita Pompeu'
 texto = texto.trim()
 texto = texto.replace('verdade', 'palavra')
-console.log(texto.slice(2, 9))
-console.log(texto.substr(2, 7))
+console.log(texto.slice(2, 9))//Igual ao substring, mas aceita valores negativos; Quando os valores são negativos o corte começa no final da string; Se omitir o segundo valor toda string é cortada
+console.log(texto.substr(2, 7))//Se omitir o segundo valor toda string é cortada; o segundo parâmetro é relativo ao primeiro
+console.log(texto.substring(9, 12))//Padrão, não aceita valores negativos e se omitir o segundo valor toda string é cortada
 */
 
 
@@ -27,7 +28,12 @@ let txt = 'A verdade será dita Adão'
 console.log(txt.slice(2, 9)[6])
 */
 
-/* Removedor
+/*
+let txt = "Hello World!"
+console.log(txt.charCodeAt(0))//Pega a letra indicada no parâmetro da função e retorna a letra em formato UTF-16 em um número inteiro
+*/
+
+/* Divide strings a partir de um valor e armazena as strings em um array
 let txt = "1, 2, 3"
 let myArray = txt.split(",")
 console.log(myArray[1])

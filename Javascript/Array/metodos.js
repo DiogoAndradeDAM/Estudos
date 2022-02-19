@@ -12,31 +12,33 @@ const txt = fruits.join('*');
 console.log(txt)
 */
 
-/* Pop() //
+/* Pop() e push() //
 
 const fruits = ["Banana", "Orange", "Apple", "Mango"];
-fruits.pop(); Remove Mango
+fruits.pop(); //Remove Mango
 console.log(fruits)
-ou
 let x = fruits.pop(); x = Mango
+fruits.push(x)//Coloca a Mango na última posição
+console.log("\n",fruits)
 */
 
-/* shift() //
+/* shift() 
 
 const fruits = ["Banana", "Orange", "Apple", "Mango"];
-fruits.shift(); Remove Banana da lista
+fruits.shift(); //Remove Banana da lista
 ou
-let x = fruits.shift(); x = Banana
+let x = fruits.shift();// x = Banana
 */
 
-/* unshift() Adiciona um item ao começo do array //
+/* unshift() //Adiciona um item ao começo do array 
 
 const fruits = ["Banana", "Orange", "Apple", "Mango"];
 fruits.unshift("Lemon");  
 console.log(fruits)
 */
 
-/* splice() Adiciona dois itens ao array //
+/* splice(quantos valores serão adicionados, quantos valores serão removidos, valores*) Adiciona dois itens ao array //
+
 
 const fruits = ["Banana", "Orange", "Apple", "Mango"];
 fruits.splice(2, 0, "Lemon", "Kiwi");
@@ -58,11 +60,11 @@ const myChildren = arr1.concat(arr2, arr3);
 console.log(arr1)
 */
 
-/* Slice() Corta partes de arrays
+/* Slice() Corta partes de arrays / Nota: o slice sempre cria um novo array
 
 const fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
 const citrus = fruits.slice(1);
-const citrusCitrus = fruits.slice(1, 3)
+const citrusCitrus = fruits.slice(1, 3) //slice() com múltiplos argumentos
 console.log(citrus)
 */
 
