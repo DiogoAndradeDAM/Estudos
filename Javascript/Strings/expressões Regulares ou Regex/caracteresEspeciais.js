@@ -13,6 +13,8 @@
 
 . = Qualquer caractere, menos uma nova linha
 
+\b = Procura uma palavra em uma frase dependendo da posição \bWord / Word\b //Funciona melhor em métodos como o search()
+
 */
 
 const pontoRegex = /./
@@ -76,4 +78,20 @@ console.log(wRegex2.test("asd"))
 console.log(wRegex2.test(" "))
 console.log(wRegex2.test("123"))
 console.log(wRegex2.test("123sad"))
+console.log()
+
+const bRegex = /\bworld/
+
+console.log(bRegex.test("this is my world"))
+console.log(bRegex.test("This is not my world"))
+console.log(bRegex.test("Don't like this"))
+console.log(bRegex.test("My world is wonderful"))
+console.log()
+
+const bRegex2 = /world\b/
+
+console.log(bRegex2.test("this is my world"))
+console.log(bRegex2.test("This is not my world"))
+console.log(bRegex2.test("Don't like this"))
+console.log(bRegex2.test("My world is wonderful"))
 console.log()

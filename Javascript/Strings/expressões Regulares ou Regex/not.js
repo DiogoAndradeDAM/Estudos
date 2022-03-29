@@ -9,5 +9,7 @@ console.log(notab.test("Aqui tem a"))
 
 let nottoaz = /[^a-z]/
 
-console.log(nottoaz.test("123 as"))
+console.log(nottoaz.test(" as"))//Note o espaço, ele retornará true
 console.log(nottoaz.test("asdsafasisfupqowfasfjn"))
+
+
