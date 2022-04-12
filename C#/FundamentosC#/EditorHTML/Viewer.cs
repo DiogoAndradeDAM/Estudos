@@ -12,7 +12,7 @@ namespace EditorHTML
       Console.Clear();
       Console.WriteLine("MODO VISUALIZAÇÃO");
       Console.WriteLine("-----------------");
-      Replace(text)
+      Replace(text);
       Console.WriteLine("-----------------");
       Console.ReadKey();
       Menu.Show();

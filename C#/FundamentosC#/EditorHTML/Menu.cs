@@ -64,7 +64,7 @@ namespace EditorHTML
         case 1: Editor.Show(); break;
         case 2: Console.WriteLine("View"); break;
         case 0: Console.Clear(); Environment.Exit(0); break;
-        default: Viewer.Show(); break;
+        default: Viewer.Show("text"); break;
       }
     }
   }
