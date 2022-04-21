@@ -41,9 +41,9 @@ namespace EditorHTML
     public static void Save(string text){
       Console.WriteLine("---------------");
       Console.WriteLine("Escreva o nome do arquivo com o tipo");
-      string fileName = Console.ReadLine();
+      string? fileName = Console.ReadLine();
       Console.Write("Escreva o caminho para salvar o arquivo: ");
-      string path = Console.ReadLine();
+      string? path = Console.ReadLine();
       path += fileName;
 
       using(var file = new StreamWriter(path)){
