@@ -1,0 +1,55 @@
+Animações CSS:
+
+As animações CSS são feitas da seguinte forma: todas as configurações (tempo, nome, delay) são colocados dentro do
+elemento basa, já as alterções que acontecem são colocadas em "@keyframes" eles recebem o nome da animação que está no
+elemento e você deverá colocar as mudanças dentro dos "@keyframes".
+
+div{
+  animation-name: example;
+  animation-duration: 4s;
+}
+
+@keyframes example{
+  from {background-color:red;}
+  to {background-color:yellow;}
+}
+
+@keyframs example{
+  0% {background-color: red;}
+  25% {background-color: yellow;}
+  50% {background-color: blue;}
+  100% {background-color: gree;}
+}
+
+Qualquer propriedade CSS pode ser colocada dentro do "@keyframes";
+
+A "animation-delay" é uma propriedade que recebe como valor um tempo em segundos(s) e ela é o tempo que demorará para a
+animação ocorrer após seu carregamento;
+animation-delay: 4s;
+
+A propriedade "animation-iteration-count" recebe como valor um número e ela indica quantas vezes uma animação irá 
+ocorrer (animações por padrão só ocorrem uma vez);
+animation-iteration-count: 3;
+também existe o valor "infinite" para a execução eterna da animação.
+
+A propriedade "animation-direction" recebe alguns valores estabelecidos que indicam qual a forma/direção que animação
+ocorrerá
+valores{
+ normal:(valor padrão) executa à animação como indicada no @keyframes;
+ reverse: executa à animação em ordem contrário ao que se está no @keyframes;
+ alternate: executa a animação primeiramente como "normal" e depois como "reverse";  
+ alternate-reverse: executa a animação de primeiramente como "reverse" e depois como "normal";
+} 
+
+A propriedade "animation-timing-function" recebe valores estabelecidos que influênciam na velocidade/forma que a 
+animação ocorrerá
+valores{
+ ease: (padrão) começo lento, ganha velocidade, término lento;
+ linear: do começo ao fim com a mesma velocidade;
+ ease-in: começo lento;
+ ease-out: término lento;
+ ease-in-out: começo e fim lentos;
+}
+
+propriedade shorthand:
+animation: "name" "duration" "timing-function" "delay" "iteration-count" "direction";

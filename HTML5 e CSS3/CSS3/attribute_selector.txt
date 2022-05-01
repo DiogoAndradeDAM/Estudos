@@ -1,0 +1,15 @@
+Seletores de atributos em CSS
+
+exemplo:
+img[title=flower]{ }
+
+~=: Pega aqueles que tiverem o valor indicado em qualquer posição, mas o valor deve estar separado de outros
+
+|=: Pega aqueles que tiverem o valor indicdo em qualquer posição e separam "-"
+
+^=: Pega elementos que comecem com valor indicado, encontra o valor em palvras compostas
+
+$=: Pega elementos que terminem com o valor indicado, encontra o valor em palavras compostas
+
+*=: Pega todos os elementos que tenham o valor indicado, encontra o valor em palavras compostas
+

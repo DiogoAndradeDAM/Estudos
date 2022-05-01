@@ -1,0 +1,87 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-size: 10;
+    height: 100vh;
+}
+
+header{
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    align-items: center;
+
+    background-color: rgb(202, 114, 114);
+    height: 10vh;
+    width: auto;
+}
+
+.link{
+    background-image: linear-gradient(45deg, red, yellow);
+    padding: 0.2rem 1rem;
+
+    text-align: center;
+    color: black;
+    text-decoration: none;
+    font-size: 2rem;
+
+    border: 1px solid black; 
+    box-shadow: 0px 3px black;
+}
+
+.link:hover{
+    background-image: linear-gradient(45deg, red, orange);
+}
+
+.link:active{
+    box-shadow: 0 0;
+}
+
+#menu{
+    background-color: aqua;
+    width: 5rem;
+    height: 5rem;
+
+    font-size: 3rem;
+    text-align: center;
+
+    border-bottom: 3px solid black;
+    border-right: 3px solid black;
+}
+
+main{
+    background-color: aquamarine;
+    height: 100vw;
+    width: auto;
+}
+
+#container{
+    visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 3rem;
+    align-items: center;
+
+    background-image: linear-gradient(45deg, rgb(36, 35, 35), black);
+    opacity: 0.9;
+    height: 100%;
+    width: 20rem;
+
+    text-align: center;
+    font-size: 1.5rem;
+    color: white;
+    text-decoration: underline;
+
+
+}
+
+#container > a{
+    color: white;
+}
+
+
+@keyframes container{
+    0%{width: 0; visibility: hidden;}
+    100%{width: 20rem; visibility: visible;}
+}

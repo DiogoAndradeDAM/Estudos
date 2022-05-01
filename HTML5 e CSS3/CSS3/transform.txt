@@ -1,0 +1,22 @@
+Transformações 2D em CSS:
+
+Transformações CSS servem para que um elemento mude seu formato ou posição, mas só é possivel enchergar o processo final com esta propriedade, porém é possivel visuzalir melhor com o propriedade "transition".
+
+translate("horizontal move", "vertical move"): A função "translate()" serve para movimentar o elemento a partir de seu
+ponto de origem;
+
+rotate("value deg"): A função "rotate()" recebe um valor em graus, que indica sua inclicanação a partir de seu centro;
+
+scale("axisX", "axisY"): Está função serve para aumentar o tamanho da escala do elemento. Existem outros dois tipos de 
+scale para cada eixo;
+scaleX();
+scaleY();
+
+skew("skewX", "skewY"): Está função serve para distorcer o elemento. Existe outros dois tipos de skew para cada eixo;
+o valor é em graus(deg)
+skewX();
+skewY();
+
+matrix("scaleX()", "skewY()", "skewX()", "scaleY()", "translateX()", "translateY()"): É um shorthand para todos os tipos de transformações;
+
+

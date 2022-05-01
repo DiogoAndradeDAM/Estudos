@@ -1,0 +1,29 @@
+Transições em CSS:
+
+A "transition" é a base e os valores reebidos são separados em: [transition-property] [transition-duration];
+
+transition: width 2s;
+transition: width 2s, height 4s;
+
+também é possivel colocar "transform" em "transition". É claro, deve ter em algum lugar o que o "transform" irá fazer
+
+transition: width 2s, height 2s, transform 2s;
+
+
+A "transition-timing-function" serve para indicar a forma de como a transição ocorrerá, e isto e declarado a partir de
+seus valores:
+
+ease: padrão;
+linear: a transição tem a mesma velocidade do começo ao fim;
+ease-in: A transição terá um começo lento;
+ease-out: A transição terá um fim lento;
+ease-in-out: A transição terá seu começo e fim lentos;
+
+O "transition-delay" recebe um valor em segundo, que indica quanto tempo demorará para transição ocorrer após ser
+ativada
+
+transition no fim de tudo é um shorthand de duas outras propriedadas:
+transition-duration;
+transition-property;
+
+
