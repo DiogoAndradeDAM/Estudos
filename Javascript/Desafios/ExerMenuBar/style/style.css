@@ -1,87 +1,116 @@
+:root{
+    font-size: 10px;
+    --font-size-default: 4rem;
+}
+
 body{
     margin: 0;
     padding: 0;
-    font-size: 10;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
     height: 100vh;
 }
 
-header{
+#principal-nav{
     display: flex;
-    justify-content: center;
-    gap: 2rem;
     align-items: center;
+    justify-content: center;
 
-    background-color: rgb(202, 114, 114);
-    height: 10vh;
+    background-color: rgb(221, 113, 25);
+    height: 10rem;
     width: auto;
 }
 
-.link{
-    background-image: linear-gradient(45deg, red, yellow);
-    padding: 0.2rem 1rem;
+#div-nav{
+    display: flex;
+    gap: 4rem;
+}
+
+.principal-link{
+    padding: 1rem 2rem;
 
     text-align: center;
+    color:white;
+    font-size: var(--font-size-default);
+
+    transition: 0.4s;
+}
+
+.principal-link:hover{
+    background-color: white;
+    opacity: 0.8;
     color: black;
-    text-decoration: none;
-    font-size: 2rem;
-
-    border: 1px solid black; 
-    box-shadow: 0px 3px black;
 }
 
-.link:hover{
-    background-image: linear-gradient(45deg, red, orange);
+#button-menu{
+    background-color: rgb(87, 87, 207);
+    padding: 1rem;
+    margin-left: 8rem;
+
+    border: 2px solid black;
+
+    font-size: 4rem;
 }
 
-.link:active{
-    box-shadow: 0 0;
-}
-
-#menu{
-    background-color: aqua;
-    width: 5rem;
-    height: 5rem;
-
-    font-size: 3rem;
-    text-align: center;
-
-    border-bottom: 3px solid black;
-    border-right: 3px solid black;
+.button-menu{
+    visibility: hidden;
+    position:absolute;
 }
 
 main{
-    background-color: aquamarine;
-    height: 100vw;
+    background-color:aquamarine;
     width: auto;
+    height: 87rem;
 }
 
-#container{
-    visibility: hidden;
+#container-nav{
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    gap: 3rem;
     align-items: center;
+    justify-content: center;
+    gap: 10rem;
 
-    background-image: linear-gradient(45deg, rgb(36, 35, 35), black);
+    background-color: rgb(31, 9, 31);
+    position: absolute;
+    top: 10rem;
+    right: 0;
+    width: 30rem;
+    height: 87rem;
     opacity: 0.9;
-    height: 100%;
-    width: 20rem;
-
-    text-align: center;
-    font-size: 1.5rem;
-    color: white;
-    text-decoration: underline;
-
-
+    
 }
 
-#container > a{
-    color: white;
+.container-nav-invisible{
+    transform: translateX(100%);
 }
 
 
-@keyframes container{
-    0%{width: 0; visibility: hidden;}
-    100%{width: 20rem; visibility: visible;}
+.container-nav-visible{
+    transform: translateX(0%);
+}
+
+.container-link{
+    padding: 1rem 2rem;
+    font-size: 3rem;
+    color: white;
+    transition: 0.4s;
+    border-bottom: 1px solid white;
+}
+
+.container-link:hover{
+    color: black;
+    background-color: gray;
+}
+
+@media screen and (max-width: 800px){
+    #div-nav{
+        visibility: hidden;
+        position: absolute;
+    }
+
+    #button-menu{
+        visibility: visible;
+        top: 1.5rem;
+        right: 10%;
+    }
 }

@@ -8,21 +8,17 @@
     <title>Menu Bar</title>
 </head>
 <body>
-    <header>
-        <a href="#" class="link">Link1</a>
-        <a href="#" class="link">Link2</a>
-        <a href="#" class="link">Link3</a>
-        <a href="#" class="link">Link4</a>
-        <button onclick="openMenu()" id="menu">---</button>
-    </header>
-
-    <main>
-        <div id="container">
-            <a href="#">Link1</a>
-            <a href="#">Link2</a>
-            <a href="#">Link3</a>
-            <a href="#">Link4</a>
+    <nav id="principal-nav">
+        <div id="div-nav">
+            <a href="#" class="principal-link">Link1</a>
+            <a href="#" class="principal-link">Link2</a>
+            <a href="#" class="principal-link">Link3</a>
+            <a href="#" class="principal-link">Link4</a>
         </div>
+        <span id="button-menu" class="button-menu">Menu</span>
+    </nav>
+    <main>
+        <button onoclick="openMenu()" id="container-nav" class="container-nav-invisible"><span class="container-link">Link</span><span class="container-link">Link</span><span class="container-link">Link</span></button>
     </main>
     <script src="js/script.js"></script>
 </body>

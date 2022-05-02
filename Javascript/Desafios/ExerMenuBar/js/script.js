@@ -1,7 +1,6 @@
-function openMenu()
-{
-    let menu = document.getElementById("container");
-    menu.style.animationName = "container";
-    menu.style.animationDuration = "1s";
-    menu.style.visibility = "visible";
+
+function openMenu(){
+    let menuBar = document.getElementById("container-nav")
+    menuBar.classList.remove(".container-nav-invisible")
+    menuBar.classList.add(".container-nav-visible")
 }
