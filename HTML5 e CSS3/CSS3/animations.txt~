@@ -1,6 +1,6 @@
-Animacoes CSS:
+Animações CSS:
 
-As animacoes CSS sao feitas da seguinte forma: todas as configurações (tempo, nome, delay) são colocados dentro do
+As animações CSS são feitas da seguinte forma: todas as configurações (tempo, nome, delay) são colocados dentro do
 elemento basa, já as alterções que acontecem são colocadas em "@keyframes" eles recebem o nome da animação que está no
 elemento e você deverá colocar as mudanças dentro dos "@keyframes".
 
