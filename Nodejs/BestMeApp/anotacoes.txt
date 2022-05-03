@@ -1,9 +1,0 @@
-Apresentando as perguntas com process.stdout.write{
-  stdout: serve para comandos de output
-  stdin: serve para comandos de input
-}
-
-Assincronismo{
-  stdin.on: Serve para 'ouvir' dados (parecido com os eventos)
-  process.on: Dispara apos receber um valor
-}
