@@ -4,19 +4,19 @@
 class Cachorro {
     constructor(raca, cor) {
         this.raca = raca
-        this.cor = cor
+        this._cor = cor
     }
 
     latir() {
         console.log("Au au")
     }
     
-    get getCor() {
-        return this.cor
+    get cor() {
+        return this._cor
     }
 
-    set setCor(cor) {
-        this.cor = cor
+    set cor(cor) {
+        this._cor = cor
     }
 
 }
@@ -25,6 +25,6 @@ let pastor = new Cachorro("Pastor Alemão", "Sem cor")
 
 console.log(pastor)
 
-pastor.setCor = "Marrom"
+pastor.cor = "Marrom"
 
-console.log(pastor.getCor)
+console.log(pastor.cor)
