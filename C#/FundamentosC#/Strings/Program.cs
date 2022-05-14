@@ -48,10 +48,10 @@ namespace Strings
       //Equals não é somente um método strings, há também para int e outros
       */
 
-      /* StartsWith e EndsWith
+      /* //StartsWith e EndsWith
       var texto = "Este texto é um teste";
       Console.WriteLine(texto.StartsWith("Este"));
-      Console.WriteLine(texto.StartsWith("este"));
+      Console.WriteLine(texto.StartsWith("este"));//Case-sensitive
       Console.WriteLine(texto.StartsWith(" Este"));
 
       Console.WriteLine(texto.EndsWith("teste"));

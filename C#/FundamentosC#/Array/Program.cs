@@ -15,12 +15,6 @@ namespace Array
         Console.WriteLine(funcionario.Id);
       */
       Console.WriteLine(meuArrayBidi[1,4]);
-
-      //Métodos de vetores e matrizes
-
-      //retorna a posição onde está o valor procurado (array, valor)
-      int indexValue=Array.BinarySearch(meuArray, value);
-      Console.WriteLine(indexValue);
       
     }
 

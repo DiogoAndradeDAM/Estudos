@@ -12,5 +12,8 @@ int main()
     armasAmmu=escopeta;
     printf("Valor : %d \n", armasAmmu);
 
+    armasAmmu = arma(3);
+    printf("Valord : %d \n", armasAmmu);
+
     return 0;
 }
