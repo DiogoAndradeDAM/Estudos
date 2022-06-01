@@ -1,24 +1,40 @@
 const rmv = document.querySelector("#remove")
 const sbmt = document.querySelector("#submit")
-const table = document.querySelector("#table")
+const items = document.querySelector(".items")
+const uName = document.querySelector("#name")
+const uAge = document.querySelector("#age")
 
-sbmt.addEventListener("click", () => {
-    const uName = document.querySelector("#name")
-    const uAge = document.querySelector("#age")
+sbmt.addEventListener("click", (event) => {
+    event.preventDefault()
 
-    let linha = document.createElement("tr")
-    let cellName = document.createElement("td")
-    let cellAge = document.createElement("td")
+    let uNameValue = uName.value
+    let uAgeValue = uAge.value
+    if(!isEmpty(uNameValue)){
+        var li = document.createElement("li")
+        li.innerHTML = `<p><strong>${uNameValue}</strong></p>`
 
-    cellName.classList.add("cell")
-    cellAge.classList.add("cell")
+    } else {
+        window.alert("Invalid Name")
+        return
+    }
 
-    cellName = uName.value
-    cellAge = uAge.value
+    if(!isEmpty(uNameValue) || !isANan(Number(uAgeValue))){
+        li.innerHTML += `<p><strong>${uAgeValue}</strong></p>`
+        items.appendChild(li)
+    } else {
+        window.alert("Invalid age")
+        return
+    }
 
-    linha.appendChild(cellName)
-    linha.appendChild(cellAge)
-
-    table.appendChild(linha)
+    uName.value = ''
+    uAge.value = ''
 
 })
+
+function isEmpty(element){
+    return (element === "" || element === " ") ? true : false
+}
+
+function isANan(element){
+    return (element === NaN) ? true : false
+}

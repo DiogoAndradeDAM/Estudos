@@ -13,6 +13,16 @@
         .cell{
             padding: 0.5rem 2rem;
         }
+
+        li{
+            border: 1px solid black;
+            width: 10rem;
+        }
+
+        p{
+            display: inline-block;
+            margin-left: 2rem;
+        }
     </style>
 </head>
 <body>
@@ -26,12 +36,9 @@
         <input type="button" id="remove" value="Remover"/>
     </form>
 
-    <table style="border: 2px solid black; border-collapse: collapse; margin-top: 5rem;" id="table">
-        <tr>
-            <th class="add-border cell">Name</th>
-            <th class="add-border cell">Age</th>
-        </tr>
-    </table>
+    <ul class="items">
+        <li><p><strong>Name</strong></p><p><strong>Age</strong></p></li>
+    </ul>
 
     <script src="script.js"></script>
 </body>
