@@ -6,39 +6,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add values im in the table</title>
     <style>
-        .add-border{
-            border: 1px solid black;
+        body{
+            margin: 0;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(16, 1fr);
+            background-color: rgb(31, 31, 31);
         }
 
-        .cell{
-            padding: 0.5rem 2rem;
+        main{
+            background-color: white;
+            grid-column: 6/12;
+
+            height: 200px;
+            border-radius: 10px;
+            margin: 50px;
         }
 
-        li{
-            border: 1px solid black;
-            width: 10rem;
+        form{
+            margin: 10px;
         }
 
-        p{
+        .items{
+            grid-column: 6/12;
             display: inline-block;
-            margin-left: 2rem;
         }
+
+        .item{
+            background-color: white;
+            width: 620px;
+            margin: 10px;
+            border-radius: 10px;
+            list-style: none;
+        }
+
+
     </style>
 </head>
 <body>
-    <form id="form">
-        <label for="name">User Name</label>
-        <input type="text" id="name" required/>
-        <label for="age">User Age</label>
-        <input type="number" id="age" min="1" max="100" required/>
-        <input type="submit" id="submit" value="Enviar"/>
-        <input type="reset" id="reset" value="Limpar"/>
-        <input type="button" id="remove" value="Remover"/>
-    </form>
+    <main>
+        <form id="form">
+            <label for="name">User Name</label>
+            <input type="text" id="name" required/>
+            <label for="ocupation">User Ocupation</label>
+            <input type="text" id="ocupation" required/>
+            <label for="age">User Age</label>
+            <input type="number" id="age" required>
+
+            <input type="submit" id="submit" value="Enviar"/>
+            <input type="reset" id="reset" value="Limpar"/>
+            <input type="button" id="remove" value="Remover"/>
+        </form>
+    </main>
 
     <ul class="items">
-        <li><p><strong>Name</strong></p><p><strong>Age</strong></p></li>
+        <li class="item"><h2>Name</h2><h2>Ocupation</h2><h2>Age</h2></li>
     </ul>
+   
 
     <script src="script.js"></script>
 </body>
