@@ -1,0 +1,31 @@
+Pontos de quebra
+
+Com unidade de medida "rem"
+@media screen and (min-width: 82rem){
+
+}
+
+@media screen and (min-width: 42rem) and (max-width: 81rem){
+
+}
+
+@media screen and (min-width: 23rem) and (max-width: 41rem){
+
+}
+
+Com unidade de medida "px"
+@media screen and (min-width: 1200px){
+
+}
+
+@media screen and (min-width: 992px) and (max-width: 1199px){
+
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px){
+
+}
+
+@media screen and (min-width: 576px) and (max-width: 767px){
+
+}
