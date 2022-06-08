@@ -1,5 +1,6 @@
 #include <iostream>
 #include <fstream>
+#include <string>
 
 using namespace std;
 
@@ -11,12 +12,23 @@ int main()
     fstream: Do programa para o sistema e vice e versa (output e input)
     */
 
-   ofstream arquivo;
+//    ofstream arquivoS;
 
-   arquivo.open("cfbcursos.txt", ios::app/*Posiciona o cursor no fina do arquivo*/);
+//    arquivoS.open("cfbcursos.txt", ios::app/*Posiciona o cursor no fina do arquivo*/);
+//    arquivoS << "CFB Cursos de c++\n";
+//    arquivoS.close();
 
-   arquivo << "CFB Cursos de c++\n";
 
-   arquivo.close();
+   ifstream arquivoE;
+    string linha;
 
+    arquivoE.open("cfbcursos.txt");
+    if(arquivoE.is_open()){
+        while(getline(arquivoE, linha)){
+            cout << linha << endl;
+        }
+        arquivoE.close();
+    } else {
+        cout << "ERROR não foi possivel ler o arquivo ERRO" << endl;
+    }
 }
