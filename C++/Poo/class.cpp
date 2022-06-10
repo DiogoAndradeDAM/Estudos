@@ -10,7 +10,7 @@ public:
     int age;
     float height;
 
-    Human(string name, int age, float height){
+    Human(string name, int age, float height):_name(name), age(age){
         this->_name = name;
         this->age = age;
         this->height = height;
@@ -41,6 +41,7 @@ Este é um construtor criado fora da classe
 int main()
 {
     Human diogo("Diogo", 16, 1.69);
+    Human douglas("Douglas", 24, 1.72);
 
     diogo.apresentation();
 
