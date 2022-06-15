@@ -54,6 +54,38 @@ void alterar_contato(Contato **c, int quant){
     }
 }
 
+void alterar_contatoB(char arq[]){
+    FILE *file = fopen(arq, "rb+");
+    Contato c;
+    int i=1, id;
+
+    if(file){
+        printf("\tLista de Contatos: \n");
+        printf("\t-------------------------\n");
+        while(fread(&c, sizeof(Contato), 1, file)){//A partir daqui o file aponta para o final do arquivo
+            printf("\t%d = %2d/%2d/%4d\t%s\n", i, c.dia, c.mes, c.ano, c.nome);
+            i++;
+        }
+        printf("\t-------------------------\n");
+
+        printf("\tDigite o indice do contato que queira alterar :");
+        scanf("%d", &id);
+        getchar();
+        id--;
+
+        if(id >= 0 && id < i -1){
+            printf("\tDigite nome e data de nascimento [dd/mm/aaaa]: \n");
+            scanf("%49[^\n]%d%d%d", &c.nome, &c.dia, &c.mes, &c.ano);
+            fseek(file, id*sizeof(Contato), SEEK_SET);//Funciona como um iterator
+            //fseek(arquivo, endereço da posição do meu vetor, de onde começar a apontar);
+            fwrite(&c, sizeof(Contato), 1, file);//file agora aponta para o contato desejado
+
+        }else printf("Contato inválido");
+        fclose(file);
+
+    }else printf("\nERROR ao abrir o arquivo\n");
+}
+
 void salvar(Contato **c, int quant, char arq[]){
     FILE *file = fopen(arq, "w");
 
@@ -69,6 +101,18 @@ void salvar(Contato **c, int quant, char arq[]){
     }else{
         printf("\nERRO ao abrir o arquivo\n");
     }
+}
+
+void salvarB(char arq[], Contato **c, int quant){
+    FILE *file = fopen(arq, "wb");
+
+    if(file){
+        for(int i=0; i<quant; i++){
+            fwrite(c[i], sizeof(Contato), 1, file);//N se pode escrever um vetor de ponteiros de uma vez, pois ele aponta para endereços
+        }
+        fclose(file);
+
+    }else printf("\nERRO ao tentar abrir\n");
 }
 
 int ler_arquivo(Contato **c, char arq[]){
@@ -93,14 +137,33 @@ int ler_arquivo(Contato **c, char arq[]){
     return quant;
 }
 
+int ler_arquivoB(Contato **c, char arq[]){
+    FILE *file = fopen(arq, "rb");
+    int quant=0;
+    Contato *novo = (Contato*) malloc(sizeof(Contato));
+
+    if(file){
+        while(fread(novo, sizeof(Contato), 1, file)){
+            c[quant] = novo;
+            quant++;
+            novo = (Contato*) malloc(sizeof(Contato));
+        }
+
+        fclose(file);
+    }else printf("\nERRO ao abrir o arquivo\n");
+
+    return quant;
+}
+
 int main()
 {
     Contato *agenda[50];
     char arquivo[] = {"agenda.txt"};
-    int tam = 50, quant = 0, opcao;
+    char arquivo2[] = {"agenda.dat"};
+    int tam = 50, quant = 0, opcao=0;
 
     do{
-        printf("\n\tSair - 0\n\tCadastrar - 1\n\tAlterar - 2\n\tImprimir - 3\n\tSalvar - 4\n\tLer arquivo - 5\n");
+        printf("\n\tSair - 0\n\tCadastrar - 1\n\tAlterar - 2\n\tImprimir - 3\n\tSalvar - 4\n\tLer arquivo - 5\n\tSalvarB - 6\n\tLerB - 7\n\tAlterarB = 8\n");
         scanf("%d", &opcao);
         getchar();
 
@@ -110,6 +173,9 @@ int main()
             case 3: imprimir(agenda, quant); break;
             case 4: salvar(agenda, quant, arquivo); break;
             case 5: quant = ler_arquivo(agenda, arquivo); break;
+            case 6: salvarB(arquivo2, agenda, quant); break;
+            case 7: quant = ler_arquivoB(agenda, arquivo2); break;
+            case 8: alterar_contatoB(arquivo2); break;
             default: if(opcao!=0) printf("\n\tOpcao invalida%d\n", quant);
         }
 
