@@ -1,73 +1,65 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 typedef struct no{
     char c;
     struct no *last;
 }No;
 
-typedef struct{
-    No *top;
-}Pilha;
-
-void criar_pilha(Pilha *p){
-    p->top = NULL;
-}
-
-void push(Pilha *p, char c){
-    No *novo = malloc(sizeof(No));
+struct no * push(No *p, char x){
+    No *novo = (No*) malloc(sizeof(No));
 
     if(novo){
-    novo->c = c;
-    novo->last = p->top;
-    p->top = novo;
-
+        novo->c = x;
+        novo->last = p;
+        return novo;
     }else printf("\nERROR");
-}
-
-No* pop(Pilha *p){
-    No *rm = NULL;
-
-    if(p->top){
-        rm = p->top;
-        p->top = rm->last;
-        return rm; 
-
-    }else printf("\nERRRROR\n");
     return NULL;
 }
 
-void show(Pilha *p){
-    No *aux = p->top;
-    printf("\nPILHA\n");
-    while(aux){
-        printf("Value: %c\n", aux->c);
-        aux = aux->last;
+struct no * pop(No **p){
+    No *rm = NULL;
+
+    if(*p){
+        rm = *p;
+        *p = rm->last;
+        return rm;
+
+    }printf("\nERRRRROR\n");}
+
+void show(No *p){
+    printf("\nINICIO\n");
+    while(p){
+        printf("\nValor: %c\n", p->c);
+        p = p->last;
     }
-    printf("\nFIM PILHA\n");
+    printf("\nFIM\n");
 }
 
-char* inverter_string(char x[]){
-    Pilha p;
-    No *rm;
-    unsigned int i=0;
-    char *mstring;
+void reverse_string(char x[]){
+    No *p=NULL, *rm;
+    char strr[strlen(x)];
+    unsigned i=0;
+
     while(x[i] != '\0'){
-        push(&p, x[i]);
-    }  
-    while(p.top !=NULL){
-        *(mstring+i) = p.top->c;
-        i--;
-        p.top = p.top.last;
+        p = push(p, x[i]);
+        i++;
+    }
+    i=0;
+    while(p){
+        strr[i] = p->c;
+        rm = pop(&p);
+        free(rm);
+        i++;
     }
 
-    return mstring;
+    printf("%s", strr);
 }
 
 int main()
 {
-    Pilha p;
-    No *rm;
+    reverse_string("Diogo Andrade");
 
     return 0;
 }
