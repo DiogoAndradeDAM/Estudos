@@ -1,0 +1,51 @@
+:root{
+    --color1: rgb(24, 13, 22);
+    --color2: rgb(71, 62, 70);
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(16, 1fr);
+}
+
+main{
+    grid-column: 4/14;
+    border: 5px solid black;
+    border-radius: 2rem;
+    height: 80rem;
+    padding: 2rem;
+}
+
+article header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: var(--color1);
+}
+
+header h2{
+    color: white;
+    margin-left: 1rem;
+}
+
+header button{
+    margin-right: 1rem;
+}
+
+section{
+    background-color: var(--color2);
+    padding: 1rem;
+    transition-delay: 5s;
+}
+
+section p{
+    margin: 0;
+    color: rgb(251, 255, 227);
+}
+
+.section-disable{
+    display: none;
+}
