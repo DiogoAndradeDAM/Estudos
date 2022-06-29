@@ -9,8 +9,14 @@ typedef struct no{
 typedef struct fila{
     No *first;
     No *last;
-    int tam;
+    unsigned int tam;
 }Fila;
+
+void init_stack(Fila *f){
+    f->first = NULL;
+    f->last = NULL;
+    f->tam = 0;
+}
 
 int main()
 {
