@@ -3,41 +3,47 @@
 #include <inttypes.h>
 #include <string.h>
 
-struct no{
-    char c;
-    struct no *last;
-    void(*push)(struct no **, char);
-    //void(*pop)(struct no *);
-    char(*top)(struct no*);
+struct person{
+    char name[30];
+    uint8_t age;
+    float height;
+    char state[2];
+    void(*show)(struct person *);
 };
 
-void push(struct no **this, char _c){
-    struct no *new = (struct no*) malloc(sizeof(struct no));
-    if(new){
-        new->c = _c;
-        new->last = *this;
-        *this = new;
-    }else printf("ERROR PUSH()");
+void show2(struct person *this){
+    printf("\tName: %s\n\tAge: %d\n\tHeight: %4.2f\n\tState: %s\n", this->name, this->age, this->height, this->state);
 }
 
-char top(struct no *this){
-    return this->c;
+void show(struct person *this){
+    printf("Name: %s\nAge: %d\nHeight: %4.2f\nState: %s\n", this->name, this->age, this->height, this->state);
 }
 
-struct no * new_stack(){
-    struct no *this = (struct no*) malloc(sizeof(struct no));
-    this->push = &push;
-    this->top = &top;
+struct person * new_person(char _n[], uint8_t _a, float _h, char _s[]){
+    struct person *this = (struct person*) malloc(sizeof(struct person));
+    strcpy(this->name, _n);
+    this->age = _a;
+    this->height = _h;
+    strcpy(this->state, _s);
+    this->show = &show;
     return this;
 }
 
+struct person * new_person2(char _n[], uint8_t _a, float _h, char _s[], void(*print)(struct person *)){
+        struct person *this = (struct person*) malloc(sizeof(struct person));
+    strcpy(this->name, _n);
+    this->age = _a;
+    this->height = _h;
+    strcpy(this->state, _s);
+    this->show = print;
+    return this;
+}
+
+
 int main()
 {
-    struct no *p=NULL, *p2 = new_stack();
-    push(&p, 'a');
-    p2->push(&p2, 's');
-    p2->push(&p2, 'd');
-    printf("%c", top(p2));
+    struct person *p1 = new_person2("Diogo Andrade de Moura", 16, 1.69, "SP", &show);
+    p1->show(p1);
 
     return 0;
 }
