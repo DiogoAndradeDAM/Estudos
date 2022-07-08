@@ -114,18 +114,18 @@ struct no * buscar(No *lista, int num){
 
 int main()
 {
-    struct no *rm, *lista=NULL;
-    
-    inserir_inicio(&lista, 10);
-    inserir_final(&lista, 30);
-    inserir_meio(&lista, 20, 10);
-    inserir_ordenado(&lista, 15);
-    rm = remover(&lista, 20);
-    free(rm);
+    struct no *la=NULL, *lb=NULL, *lc=NULL, *aux;
+    inserir_inicio(&la, 10);
+    inserir_final(&la, 20); 
+    inserir_inicio(&lb, 50); 
+    inserir_final(&lb, 60); 
 
-    imprimir_lista(lista);
-    rm = buscar(lista, 15);
-    printf("\nValor buscado: %d\n", rm->value);
+    lc = la;
+    aux = lc;
+    while(aux->next) aux = aux->next;
+    aux->next = lb;
+
+    imprimir_lista(lc);
 
     return 0;
 }
