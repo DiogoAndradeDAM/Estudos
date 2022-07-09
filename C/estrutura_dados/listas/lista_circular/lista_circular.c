@@ -6,126 +6,170 @@ typedef struct no{
     struct no *next;
 }No;
 
-void inserir_inicio(No **lista, int num){
+typedef struct lista{
+    No *inicio;
+    No *fim;
+    int tam;
+}Lista;
+
+struct lista new_lista(){
+    Lista lista;
+    lista.inicio = NULL;
+    lista.fim = NULL;
+    lista.tam = 0;
+    return lista;
+}
+
+void inserir_inicio(Lista *lista, int num){
     No *novo = (struct no*) malloc(sizeof(No));
 
     if(novo){
         novo->value = num;
-        novo->next = *lista;//novo aponta para o inicio da lista
-        *lista = novo;
+        novo->next = lista->inicio;//novo aponta para o inicio da lista
+        lista->inicio = novo;
+        if(lista->fim = NULL)
+            lista->fim = novo;
+        lista->fim->next = lista->inicio;
+        lista->tam++;
     }
 }
 
-void inserir_final(No **lista, int num){
-    No *aux, *novo = (struct no*) malloc(sizeof(No));
+void inserir_final(Lista *lista, int num){
+    No *novo = (struct no*) malloc(sizeof(No));
 
     if(novo){
         novo->value = num;
-        novo->next = NULL;
-        if(*lista == NULL){
-            *lista = novo;
+        if(lista->inicio == NULL){
+            lista->inicio = novo;
+            lista->fim = novo;
+            lista->fim->next = lista->inicio;
         }else{
-            aux = *lista;
-            while(aux->next)
-                aux = aux->next;
-            aux->next = novo;
+            lista->fim->next = novo;
+            lista->fim = novo;
+            lista->fim->next = lista->inicio;
+            //novo->next = lista->inicio;
         }
+        lista->tam++;
     }
 }
 
-void inserir_meio(No **lista, int num, int ant){
+void inserir_meio(Lista *lista, int num, int ant){
     No *aux, *novo = (struct no*) malloc(sizeof(No));
 
     if(novo){
         novo->value = num;
-        if(*lista == NULL){
-            novo->next = NULL;
-            *lista = novo;
+        if(lista->inicio == NULL){
+            lista->inicio = novo;
+            lista->fim = novo;
+            novo->next = lista->inicio;
         }else{
-            aux = *lista;
+            aux = lista->inicio;
             while(aux->value != ant && aux->next)
                 aux = aux->next;
             novo->next = aux->next;
             aux->next = novo;
         }
+        lista->tam++;
     }
 }
 
-void inserir_ordenado(No **lista, int num){
-    No *aux, *novo = (struct no*) malloc(sizeof(No));
+void inserir_ordenado(Lista *lista, int num){
+    No *aux, *new = (struct no*) malloc(sizeof(No));
 
-    if(novo){
-        novo->value = num;
-        if(*lista == NULL){
-            novo->next = NULL;
-            *lista = novo;
-        }else if(novo->value < (*lista)->value){
-            novo->next = *lista;
-            *lista = novo;
+    if(new){
+        new->value = num;
+        if(lista->inicio == NULL){
+            inserir_inicio(lista, num);
+        }else if(new->value < lista->inicio->value){
+            inserir_inicio(lista, num);
         }else{
-            aux = *lista;
-            while(aux->next && novo->value > aux->next->value)
+            aux = lista->inicio;
+            while(aux->next != lista->inicio && new->value > aux->next->value)
                 aux = aux->next;
-            novo->next = aux->next;
-            aux->next = novo;
-        }
-    }
-}
-
-struct no * remover(No **lista, int num){
-    No *aux, *rm = NULL;
-    if(*lista){
-        if((*lista)->value == num){
-            rm = *lista;
-            *lista = rm->next;
-        }else{
-            aux = *lista;
-            while(aux->next && aux->next->value != num)
-                aux = aux->next;
-            if(aux->next){
-                rm = aux->next;
-                aux->next = rm->next;
-
+            if(aux->next == lista->inicio)
+                inserir_final(lista, num);
+            else{
+                new->next = aux->next;
+                aux->next = new; 
+                lista->tam++;
             }
         }
-    }else printf("ERRRO FOR SEARCH VALUE");
-    return rm;
-}
-
-void imprimir_lista(No *lista){
-    printf("INICIO FILA\n");
-    while(lista){
-        printf("%d - ", lista->value);
-        lista = lista->next;
     }
-    printf("\nFIM FILA\n");
 }
 
-struct no * buscar(No *lista, int num){
-    No *aux, *no = NULL;
-    aux = lista;
-    while(aux && aux->value != num)
-        aux = aux->next;
-    if(aux)
-        no = aux;
+void imprimir(Lista lista){
+    No *no = lista.inicio;
+    printf("INICIO DA LISTA\n");
+    printf("Tamanho: %d\n", lista.tam);
+    if(no){
+        do{
+            printf("Valor: %d\n", no->value);
+            no = no->next;
+        }while(no != lista.inicio);
+    }
+    printf("\nFIM DA LISTA\n");
+}
 
-    return no;
+struct no * buscar(Lista lista, int num){
+    struct no *aux = lista.inicio;
+    if(aux){
+        do{
+            if(aux->value == num) return aux;
+            aux = aux->next;
+        }while(aux != lista.inicio);
+    }
+    return NULL;
+}
+
+struct no * remover(Lista *lista, int num){
+    struct no *aux, *rm = NULL;
+
+    if(lista->inicio){
+        if(lista->inicio == lista->fim && lista->inicio->value == num){
+            rm = lista->inicio;
+            lista->inicio = NULL;
+            lista->fim = NULL;
+
+        }else if(lista->inicio->value == num){
+            rm = lista->inicio;
+            lista->inicio = rm->next;
+            lista->fim->next = lista->inicio;
+        }else{
+            aux = lista->inicio;
+            while(aux->next != lista->inicio && aux->next->value != num)
+                aux = aux->next;
+            if(aux->next->value == num){
+                if(lista->fim == aux->next){
+                    rm = aux->next;
+                    aux->next = rm->next;
+                    lista->fim = aux;
+                }else{
+                    rm = aux->next;
+                    aux->next = rm->next;
+                }
+            }
+        }
+        lista->tam--;
+    }
+
+    return rm;
 }
 
 int main()
 {
-    struct no *rm, *lista=NULL;
-    
-    inserir_inicio(&lista, 10);
-    inserir_final(&lista, 30);
-    inserir_meio(&lista, 20, 10);
-    inserir_ordenado(&lista, 15);
-    rm = remover(&lista, 20);
-    free(rm);
+    Lista list = new_lista(&list);
+    No *rm;
 
-    imprimir_lista(lista);
-    rm = buscar(lista, 15);
+    inserir_inicio(&list, 10);
+    //inserir_final(&list, 30);
+    inserir_meio(&list, 20, 10);
+    inserir_ordenado(&list, 15);
+    // rm = remover(&list, 15);
+    // free(rm);
+    rm = buscar(list, 15);
     printf("\nValor buscado: %d\n", rm->value);
+
+    imprimir(list);
 
     return 0;
 }
