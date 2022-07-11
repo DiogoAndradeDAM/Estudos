@@ -57,9 +57,9 @@ struct no * buscar_versao_1(NoArv *raiz, int num){
         if(num == raiz->value)
             return raiz;
         else if(num < raiz->value)
-            buscar_versao_1(raiz->left, num);
+            return buscar_versao_1(raiz->left, num);
         else
-            buscar_versao_1(raiz->right, num);
+            return buscar_versao_1(raiz->right, num);
     }else return NULL;
 }
 
@@ -90,19 +90,81 @@ void exibir_versao_2(NoArv *raiz){
     }
 }
 
+int altura(NoArv *raiz){//Altura é a distância dos elementos mais longe da raiz
+    if(raiz == NULL){
+        return -1;
+    }else{
+        int esq = altura(raiz->left);
+        int dir = altura(raiz->right);
+        if(esq > dir) return esq + 1;
+        else return dir + 1;
+    }
+}
+
+int quantidade_nos(NoArv *raiz){
+    if(raiz == NULL){
+        return 0;
+    }else{
+        return 1 + (quantidade_nos(raiz->left) + quantidade_nos(raiz->right));
+    }
+}
+
+int quantidade_folha(NoArv *raiz){
+    if(raiz == NULL)
+        return 0;
+    else if(raiz->left == NULL && raiz->right == NULL)
+        return 1;
+    else return quantidade_folha(raiz->left) + quantidade_folha(raiz->right);
+
+}
+
+struct no * remover(NoArv *raiz, int num){
+    if(raiz == NULL){
+        return NULL;
+    }else{
+        if(raiz->value == num){
+            if(raiz->left == NULL && raiz->right == NULL){
+                free(raiz);
+                printf("\nRemovido valor %d da arvore\n", num);
+                return NULL;
+            }else{
+                if(raiz->left != NULL && raiz->right != NULL){
+                    NoArv *aux = raiz->left;
+                    while(aux->right != NULL) aux = aux->right;
+                    raiz->value = aux->value;
+                    aux->value = num;
+                    raiz->left = remover(raiz->left, num);
+                    return raiz;
+                    
+                }else{
+                    NoArv *aux;
+                    if(raiz->left != NULL) aux = raiz->left;
+                    else aux = raiz->right;
+                    free(raiz);
+                    return aux;
+                }
+            }
+        }else{
+            if(num < raiz->value) raiz->left = remover(raiz->left, num);
+            else raiz->right = remover(raiz->right, num);
+            return raiz;
+        }
+    }
+}
+
 int main()
 {
-    NoArv *raiz = NULL, *b;
+    NoArv *raiz = NULL, *rm;
 
     inserir_versao_3(&raiz, 50);
-    inserir_versao_3(&raiz, 30);
     inserir_versao_3(&raiz, 25);
+    inserir_versao_3(&raiz, 20);
+    inserir_versao_3(&raiz, 30);
     inserir_versao_3(&raiz, 100);
 
+    raiz = remover(raiz, 25);
     exibir_versao_2(raiz);
 
-    b = buscar_versao_2(raiz, 30);
-    printf("\nValor buscado: %d", b->value);
 
     return 0;
 }
