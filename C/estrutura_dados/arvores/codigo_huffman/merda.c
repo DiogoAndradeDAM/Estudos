@@ -133,19 +133,109 @@ void imp_tree_leaf(Node *raiz, short int tam){
     }
 }
 
+char** aloc_dict(short int cols){
+    char **dict;
+    unsigned short int i;
+    dict = malloc(sizeof(char*) * SIZET1);
+
+    for(i=0; i<SIZET1; i++) dict[i] = calloc(cols, sizeof(char));
+    
+    return dict;
+}
+
+void gnrt_dict(char **dict, Node *raiz, char *path, short int cols){
+    char left[cols], right[cols];
+
+    if(raiz->left == NULL && raiz->right == NULL){
+        strcpy(dict[raiz->c], path);
+    }else{
+        strcpy(left, path);
+        strcpy(right, path);
+
+        strcat(left, "0");
+        strcat(right, "1");
+
+        gnrt_dict(dict, raiz->left, left, cols);
+        gnrt_dict(dict, raiz->right, right, cols);
+    }
+}
+
+void imp_dict(char **dict){
+    unsigned short int i;
+    for(i=0; i<SIZET1; i++){
+        printf("\t%3d: %s\n", i, dict[i]);
+    }
+}
+
+int calcula_tam_str(char **dict, unsigned char *text){
+    int i=0, tam=0;
+    while(text[i] != '\0'){
+        tam += strlen(dict[text[i]]);
+        i++;
+    }
+    return tam+1;
+}
+
+char * codificar(char **dict, unsigned char *text){
+    int i=0, tam = calcula_tam_str(dict, text);
+    char *code = calloc(tam, sizeof(char));
+    
+    while(text[i] != '\0'){
+        strcat(code, dict[text[i]]);
+        i++;
+    }
+    return code;
+}
+
+char * decodificar(char *text, Node *raiz){
+    unsigned short int i=0;
+    Node *aux = raiz;
+    char temp[2];
+    char *decode = calloc(strlen(text), sizeof(char));
+
+    while(text[i] != '\0'){
+        if(text[i] == '0') aux = aux->left;
+        else aux = aux->right;
+
+        if(aux->left == NULL && aux->right == NULL){
+            temp[0] = aux->c;
+            temp[1] = '\0';
+            strcat(decode, temp);
+            aux = raiz;
+        }
+
+        i++;
+    }
+
+    return decode;
+}
+
 int main()
 {
     unsigned int tablefre[SIZET1];
-    unsigned char tablecod[SIZET1][5];
+    unsigned char text[] = {"Vamos aprender a programar"};
+    char **table_dict;
     List list;
     Node *arv;
+    char *codificado, *decodificado;
 
     init_table_ref(tablefre);
-    add_fre(tablefre, "Vamos aprender a programar");
+    add_fre(tablefre, text);
 
     new_list(&list);
     fill_list(tablefre, &list);
     
     arv = create_tree(&list);
-    imp_tree_leaf(arv, 0);   
+    //imp_tree_leaf(arv, 0); 
+
+    table_dict = aloc_dict(5);
+    gnrt_dict(table_dict, arv, "", 5);
+    // imp_dict(table_dict);
+
+    codificado = codificar(table_dict, text);
+    printf("\n%s\n", codificado);
+
+    //decodificado = decodificar(codificado, arv);
+    //printf("\n%s\n", decodificado);
+
 }
