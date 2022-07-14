@@ -1,0 +1,98 @@
+ls [*opções*] [*arquivos*]:
+-1: (Lista um arquivo por linha)
+-a: --all (carrega todos os diretórios)
+-A: --almost-all (Não exibe os '.' e '..' no inicio da listagem)
+-c: (Normalmente ordena os arquivos pela última data e hora de modificação)
+-d: --directory (Lista os diretórios, ao invés dos seus conteúdos)
+-l: --longing (carrega os arquivos e diretórios com mais informações)
+-h: --human (mostra os arquivos de forma mais compreensivel para humanos e o tamanho dos arquivos)
+-R: --Recursive (carrega os arquivos e diretórios de todos os diretórios seguintes)
+-s: --size (Exibe o tamanho dos arquivos em blocos)
+-t: (Ordena os arquivos pela data e hora de modificação)
+-v: (Ordena pela versão dos arquivos)
+-S: (Ordena os arquivos pelo tamanho)
+-m: (Separa as entradas por vírgula)
+-r: --reverse (Ordena os arquivos inversamente)
+-R: --recursive (Lista os conteúdos dos sub-diretórios recursivamente)
+--format=*formato*: (Formato de saída, sendo:
+	commas; long; verbose; across; horizontal; single-column; vertical	
+)
+--full-time: (exibe tanto a hora como a data completas)
+
+touch [*opções*] arquivos:
+-a: (Atualiza apenas a data e a hora de acesso)
+-c: --no-create (Não cria arquivos)
+-m: (Atualiza apenas a data e hora de modificação)
+
+mkdir opções:
+-p: (cria novos diretórios dentro de um que você já está criando)
+
+rm opções:
+-f: --force (força deletar)
+-r: --recursive (deleta tudo que está dentro do que você está deletando)
+-i: (Pergunta se você quer deletar cada arquivo)
+-I: (Se houver mais de 3 arquivos dentro do diretório, ele irá perguntar se quer deletar tudo)
+
+find [*paths*] [*espreção*] opções:
+-mmin [+|-]*n*: Os dados do arquivo foram mudados a n minutos atrás
+-mtime [+|-]*n*: Os dados foram modificados a (n*24) foras atrás
+-type: indica o tipo do arquivo procurado:
+	d: Diretório;
+	D: Porta;
+	f: Arquivo regular;
+	l: Links simbólico;
+	p: Pipe nomeado;
+	s: Socket;
+-regex *expr_regular*: nome do arquivo coincide com uma expressão regular
+-size [+|-]*n*[*unidade*]: o arquivo utiliza [mais ou menos] n unidades de espaço de disco:
+	b: blocos de 512 bytes (default)
+	c: bytes;
+	k: kilobytes;
+	w: palavras de 2 bytes;
+-name: recebe o nome e a extensão do arquivo ou diretorio
+
+tail [*opções*]:
+-*number*: (No lugar no number recebe um número inteiro que será a quantidade de linhas exibidas)
+	-f: (Pendura o final do arquivo, assim qualquer modificação pode ser vista, até mesmo de links)
+
+pwd: mostra onde você está dentro da home;
+find: Encontra arquivos ou diretórios. find <path> [argumentos] [expresison];
+cat: mostra o conteudo de um arquivo;
+less: funciona como o cat, mas ele não executa o arquivo totalmente;
+tac: mostra o conteudo de um arquivo, mas ele começa de baixo pra cima;
+rm: deleta arquivos e diretórios (cuidado! Muito potente);
+rmdir: deleta diretórios, mas somente quando estão vazios;
+man: manual dos comandos;
+rename: (string1 string2 arquivos) Procura nos arquivos a ocorrência da string1, e caso encontre irá 
+substituir a ocorrência pela string2;
+tail: -*n* (Exive as últimas linhas, o n é trocado por um número que será as últimas linhas;) 
+cp: (copiar) funciona da seguinte forma [comando] [parâmetro] [argumentos], da onde vem, pra onde vai;
+mv: move arquivos, parecido com o ctrl+x. Funciona parecido ao comando cp;
+mv: serve para mudar nomes de arquivos, [nome atual] [novo nome];
+touch: cria novos arquivos. Também pode ser usado para mudar a data e hora da criação do arquivo;
+file: mostra o tipo do arquivo e outras informações do arquivo;
+stat: mostra o dono, as modificações e o tramanho do arquivo;
+!!: copia o ultimo comando digita de mesma posição;
+dpkg: instalador de pacotes, utilize o atributo -i (install) e depois o que será instalado;
+
+alias: serve para configurar os comandos, ex(alias rm="rm -I"), mas quando fechado a edição é perdida
+
+referências globais ou wildcards:
+*x: (no final) significa procure arquivos que termine com x
+*x*: (entre) procure arquivos que tem um 'x' no meio do nome
+?x: (qualquer)significa procure arquivos que tem uma letra antes do x que eu não sei qual é
+[a-i]: (entre x e y) significa procure arquivos que tem letras entre 'a' ate 'i' no nome
+[a,i]: (x ou  y) procure arquivos que tem 'a' ou 'i' no nome 
+{am,ul}: (xz ou yw) serve para procurar arquivos, mas diferente dos colchetes ele tem mais exigência
+
+sudo: da permissões de root ao usuario
+apt: É um utilitário, ele procura um repositório para acessa-lo de alguma forma. Serve para atualizar coisas no sistema
+
+apt comandos:
+search: pesquisa nas descrições dos pacotes
+install: serve para instalar coisas, sempre uso o 'sudo'
+remove: remove pacotes baixados
+upgrades: instala e atualiza pacotes do sistema
+full-upgrades: remove, instala e atualiza pacotes do sistema
+-cashe: procura dependencias de um programa
+

@@ -1,0 +1,13 @@
+sbin: Onde fica os binários do sistema. Programas que desligam o computador, manipulador de drives,etc
+
+/bin: Comandos do sistema, shell e bash e outros programas.
+
+/usr: Onde ficam os programas do usuário.
+
+/etc: Arquivos de configuração.
+
+/var: Dados variáveis do sistema.
+
+/tmp: Diretório para arquivos temporários, tudo aqui é perdido quando a máquina desliga.
+
+ 
