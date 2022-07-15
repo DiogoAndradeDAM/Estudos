@@ -1,5 +1,5 @@
 // lista de argumentos
- console.log(process.argv)
+ console.log(process.argv[2])
 
 //const firstName = process.argv[2]
 //const lastName = process.argv[3]

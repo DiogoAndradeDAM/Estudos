@@ -38,7 +38,7 @@ app.get("/", function(req, res){
 
   const subtitle = "Uma linguagem de modelagem para criação de páginas HTML utilizando JavaScript"  
   //por padrão o express quer que o index esteja em uma pasta chamada views
-  res.render("pages/index", /*Passando um objetom isto é só cosmético*/ {
+  res.render("/pages/index", /*Passando um objetom isto é só cosmético*/ {
     qualitys: items,
     subtitle: subtitle
   })
