@@ -10,7 +10,6 @@ int main()
   char palavras2[20] = {"Abacate"};
   char palavras3[20] = {"Bom dia"};
   char *letra, *letra2, *pt;
-
   //Matrizes em C cada linha é uma string, então é necessário indicar o indice das linhas
 
   //\0 na tabela ASCII significa NULL e é o final de uma string
