@@ -1,0 +1,2 @@
+npm create vite@latest reactapp --template react
+npm modo    origem      nome_dir    opção   framework
