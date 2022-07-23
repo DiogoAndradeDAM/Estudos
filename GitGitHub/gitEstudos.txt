@@ -15,16 +15,37 @@ add [arquive]: adiciona arquivos e diretórios a stage area
 commit: faz um commit dos arquivos na stage area
 status: mostra o status das áreas do git
 log: mostra as versões do projeto na Commited area
-checkout [code version]: muda para qual versão o git está apontado(HEAD) referente ao código colocado. Master no lugar do código, volta para a última versão
+checkout [code version] *--* [*files*]: muda para qual versão o git está apontado(HEAD) referente ao código colocado. 
+Master no lugar do código, volta para a última versão
 clone [link]: clona um repositório do gitHub na máquina a partir do link dele
 push: leva arquivos do repositório local para o gitHub
 pull: traz arquivos do gitHub para o repositório local
+clean: Apaga os arquivos na working area e pode deletar arquivos
 restore: dicarta mudanças feitas em arquivos no ambiente de desenvolvimento
+revert: traz os arquivos de um commit na linha do tempo para o working staged
+show <hash>: Mostra alterações de commits antigos a partir de um hash
 }
 
 commit atributos:
 -m: (message) adiciona uma mensagem ao commit;
 -a: (add) funciona igual ao comando 'add', mas só funciona para arquivos que já passaram pelo git
 
+
 restore atributos:
 --staged: retira arquivos da stage area
+
+clean opções:
+-n: Mostra quais arquivos ele irá limpar
+-f: Força o clean a funcionar e apagar os arquivos do sistema
+
+log opções:
+-oneline: resume o que seria mostrado no log em uma linha para cada item
+
+
+revert opções:
+HEAD~n: Partirá da HEAD para outro commit abaixo da HEAD atual baseado no valor de 'n'
+<hash>: Traz os arquivos do commit do hash respectivo
+
+show opções:
+--color-words: Coloca cores mais claras onde houve as mudanças, como verde para novas linhas e vermelho para remoção de linhas
+-- <path>: Mostra as alterações em um path esprecifico

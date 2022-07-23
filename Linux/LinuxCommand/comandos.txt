@@ -49,7 +49,7 @@ find [*paths*] [*espreção*] opções:
 	c: bytes;
 	k: kilobytes;
 	w: palavras de 2 bytes;
--name: recebe o nome e a extensão do arquivo ou diretorio
+-name: recebe o nome e a extensão do arquivo ou diretorio como string
 
 tail [*opções*]:
 -*number*: (No lugar no number recebe um número inteiro que será a quantidade de linhas exibidas)
