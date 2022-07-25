@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adicionando valores com javascript</title>
+</head>
+<body>
+    <form id="form">
+        <label for="name">Name: 
+            <input type="text" id="name" placeholder="Fulano" required/>
+        </label>
+        <label for="email">Email:
+            <input type="text" id="email" placeholder="fulano@gmail.com" required/>
+        </label>
+        <fieldset id="container-ages">
+            <legend>Selecione sua idade</legend>
+            <label for="menorI">Menor de 18:
+                <input type="radio" id="menor" class="ages">
+            </label>
+            <label for="maiorI18">Maior de 18:
+                <input type="radio" id="maior18" class="ages">
+            </label>
+            <label for="maiorI65">Maior de 65:
+                <input type="radio" id="maior65" class="ages">
+            </label>
+        </fieldset>
+
+        <button id="button-submit">Enviar</button>
+    </form>
+    <div id="container-result">
+
+    </div>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>
