@@ -1,7 +1,7 @@
 /*
 \d = Qualquer dígito de numero
 
-\w = Um caractere alfanumérico ("teste")
+\w = Um caractere alfanumérico ("teste") e underline
 
 \s = Qualquer caractere de espaço em branco
 
