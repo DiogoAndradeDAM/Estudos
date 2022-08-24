@@ -11,7 +11,7 @@ int main()
     float pi = 3.1415;
 
     printf("Valor com printf(%5.3f);\n", pi);
-    cout.precision(4);
+    cout.precision(5);
     cout << "Valor com cout << " /*<< std::scientific Notação cientifica*/<< pi << endl;
     cout.precision(-1); //Volta ao normal
 
