@@ -22,5 +22,6 @@ int main()
     std::cout << str.substr(0, sizeof(str))<<"\n";
     std::cout << str.erase(aux, sizeof(str))<<"\n";
     std::cout << str.insert(0, "#")<<"\n";
-    std::cout << setbase(16)<<str<<"\n";
+    std::cout << str.find(str.at(0))<<"\n";
+    std::cout << str.replace(0,3,"fai")<<"\n";
 }

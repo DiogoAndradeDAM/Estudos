@@ -19,7 +19,7 @@ int main()
 //    arquivoS.close();
 
 
-   ifstream arquivoE;
+    ifstream arquivoE;
     string linha;
 
     arquivoE.open("cfbcursos.txt");
