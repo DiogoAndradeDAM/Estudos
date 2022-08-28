@@ -15,23 +15,9 @@ class Weapon{
         FisicEffects weaponEffect;
 
     public:
-        Weapon(){
-            this->weaponLevel=nivelArmas::nivel1;
-            this->damage=0;
-            this->weight=0;
-            this->name="none";
-            this->dice=20;
-            this->weaponEffect=FisicEffects::none;
-        }
 
-        Weapon(nivelArmas _weap, int _dam, float _we, std::string _name, unsigned short int _dice){
-            this->weaponLevel=_weap;
-            this->damage=_dam;
-            this->weight=_we;
-            this->name=_name;
-            this->dice=_dice;
-            this->weaponEffect=FisicEffects::none;
-        }
+        Weapon();
+        Weapon(nivelArmas _weap, int _dam, float _we, std::string _name, unsigned short int _dice, FisicEffects _effect);
 
         /*Getters e Setters*/
         //Dice
@@ -48,22 +34,41 @@ class Weapon{
         void set_damage(int _newValue){this->damage=_newValue;}
         //Fisics Effects
         FisicEffects get_weaponEffect(){return this->weaponEffect;}
+
+        void ShowStatistics();
 };
 
-class Swords:public Weapon{
-    public:
-        Swords(nivelArmas _weap, int _dam, float _we, std::string _name, unsigned short int _dice, FisicEffects _effect)
-        :Weapon(_weap,_we,_name,_name){
-            this->weaponEffect=_effect;
-        }
-};
+Weapon::Weapon(){
+    this->weaponLevel=nivelArmas::nivel1;
+    this->damage=0;
+    this->weight=0;
+    this->name="none";
+    this->dice=20;
+    this->weaponEffect=FisicEffects::none;
+}
 
+Weapon::Weapon(nivelArmas _weap, int _dam, float _we, std::string _name, unsigned short int _dice, FisicEffects _effect){
+    this->weaponLevel=_weap;
+    this->damage=_dam;
+    this->weight=_we;
+    this->name=_name;
+    this->dice=_dice;
+    this->weaponEffect=_effect;
+}
 
+void Weapon::ShowStatistics(){
+    std::cout << "Nivel: "<<this->get_weaponLevel()<<"\n";
+    std::cout << "Damage: "<<this-get_damage()<<"\n";
+    std::cout << "Peso: "<<this->get_weight()<<"\n";
+    std::cout << "Nome: "<<this->get_name()<<"\n";
+    std::cout << "Efeito: "<<this->get_weaponEffect()<<"\n";
+    std::cout << "Dado: D"<<this->get_dice()<<"\n";
+}
 
 int main(int argc, char** argv)
 {
-    Weapon sword = Weapon(nivelArmas::nivel1, 10, 2.5, "Espada de Ferro", 12);
-    std::cout << sword.get_dice();
-
+    Weapon sword = Weapon(nivelArmas::nivel1, 10, 2.5, "Espada de Ferro", 12, FisicEffects::perfurante);
+    
+    sword.ShowStatistics();
     return 0;
 }
