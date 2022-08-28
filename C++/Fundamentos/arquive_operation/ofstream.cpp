@@ -20,7 +20,9 @@ int main()
 
 
     ifstream arquivoE;
+    ofstream arquivoO;
     string linha;
+
 
     arquivoE.open("cfbcursos.txt");
     if(arquivoE.is_open()){

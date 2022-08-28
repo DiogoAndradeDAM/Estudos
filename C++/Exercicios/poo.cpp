@@ -1,40 +1,45 @@
 #include <iostream>
-#include <cstdlib>
-#include <vector>
+#include <memory>
 
-class People{
-    People(){this->size = 0;}
+enum nivelArmas {nivel1=1, nivel2, nivel3, nivel4, nivel5};
 
+class Weapon{
     private:
-        unsigned int size;
-        std::vector<std::string> list_person;
+        nivelArmas weaponLevel;
+        int damage;
+        float weight;
+        std::string name;
+        unsigned short int dice;
 
     public:
-        unsigned int get_size(){return this->size;}
+        unsigned short int get_dice(){return this->dice;}
 
-        void push_person(std::string _p){
-            this->list_person.push_back(_p);
-            this->size++;
-        }
-        void pop_person(){
-            this->list_person.pop_back();
-            this->size--;
-        }
 
-        std::string get_person(){return this->list_person.back();}
+        int get_weaponLevel(){return (int)this->weaponLevel;}
+
+
+        float get_weight(){return this->weight;}
+
+
+        std::string get_name(){return this->name;}
+
+        int get_damage(){return this->damage;}
+
+
 };
 
-int main()
+Weapon::Weapon(int _damage){
+    this->weaponLevel=nivel1;
+    this->damage=_damage;
+    this->weight=0;
+    this->name="none";
+    this->dice=20;
+};
+
+int main(int argc, char** argv)
 {
-    People *list;
-
-    list->push_person("Diogo");
-    list->push_person("Andrade");
-
-    std::cout << list->get_size()<<"\n";
-    std::cout << list->get_person()<<"\n";
-    list->pop_person();
-    std::cout << list->get_person()<<"\n";
+    Weapon *sword = new Weapon(10);
+    std::cout << sword->get_dice();
 
     return 0;
 }

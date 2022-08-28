@@ -13,6 +13,7 @@ int main()
     prod[2] = "Monitor";
     prod.insert(pair<int,string>(3,"Cx.Som"));//pair para colocar o valor no map
 
+
     //prod.erase(2);//deleta a partir da chave
     //prod.erase(prod.begin(), prod.end()); //Apaga tudo
     //prod.clear();
