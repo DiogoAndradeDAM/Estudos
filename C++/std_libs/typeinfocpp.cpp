@@ -3,6 +3,8 @@
 
 class Teste{};
 
+class Base: public Teste{};
+
 int main()
 {
     auto n {10};
@@ -20,6 +22,14 @@ int main()
         std::cout << "int vem antes de char";
     }else{
         std::cout << "char vem antes de int";
+    }
+
+    std::cout <<"\n\n";
+
+    if(typeid(Base).before(typeid(Teste))){
+        std::cout << "Base vem antes de Teste";
+    }else{
+        std::cout << "Teste vem antes de Base";
     }
     return 0;
 }
