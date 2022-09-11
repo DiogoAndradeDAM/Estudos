@@ -1,0 +1,46 @@
+body{
+    background-color: rgb(24, 4, 21);
+}
+
+#formText{
+    width: 80%;
+    margin: 50px 10% 20px 10%;
+    height: 100px;
+    padding: 10px 0;
+    border: 2px inset white;
+    border-radius: 1rem;
+
+    font-size: 1.2rem;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+#selectLevelText{
+    margin-left: 15%;
+    width: 6rem;
+    height: 2.5rem;
+    font-size: 1.2rem;
+}
+
+.borderRadiusTops{
+    border-top-left-radius: .5rem;
+    border-top-right-radius: .5rem;
+}
+
+.borderRadiusDowns{
+    border-bottom-left-radius: .5rem;
+    border-bottom-right-radius: .5rem;
+}
+
+#containerText{
+    width: 80%;
+    height: 20rem;
+    margin: 100px 10% 10px 10%;
+    background-color: white;
+
+    font-size: 1.5rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#formBtnSubmit:hover{
+    background-color: violet;
+}
