@@ -1,0 +1,15 @@
+C:\Programacao\Estudos\C#\Basicc\Teste1\obj\Debug\net6.0\Teste1.csproj.AssemblyReference.cache
+C:\Programacao\Estudos\C#\Basicc\Teste1\obj\Debug\net6.0\Teste1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Programacao\Estudos\C#\Basicc\Teste1\obj\Debug\net6.0\Teste1.AssemblyInfoInputs.cache
+C:\Programacao\Estudos\C#\Basicc\Teste1\obj\Debug\net6.0\Teste1.AssemblyInfo.cs
+C:\Programacao\Estudos\C#\Basicc\Teste1\obj\Debug\net6.0\Teste1.csproj.CoreCompileInputs.cache
+C:\Programacao\Estudos\C#\Basicc\Teste1\bin\Debug\net6.0\Teste1.exe
+C:\Programacao\Estudos\C#\Basicc\Teste1\bin\Debug\net6.0\Teste1.deps.json
+C:\Programacao\Estudos\C#\Basicc\Teste1\bin\Debug\net6.0\Teste1.runtimeconfig.json
+C:\Programacao\Estudos\C#\Basicc\Teste1\bin\Debug\net6.0\Teste1.dll
+C:\Programacao\Estudos\C#\Basicc\Teste1\bin\Debug\net6.0\Teste1.pdb
+C:\Programacao\Estudos\C#\Basicc\Teste1\obj\Debug\net6.0\Teste1.dll
+C:\Programacao\Estudos\C#\Basicc\Teste1\obj\Debug\net6.0\refint\Teste1.dll
+C:\Programacao\Estudos\C#\Basicc\Teste1\obj\Debug\net6.0\Teste1.pdb
+C:\Programacao\Estudos\C#\Basicc\Teste1\obj\Debug\net6.0\Teste1.genruntimeconfig.cache
+C:\Programacao\Estudos\C#\Basicc\Teste1\obj\Debug\net6.0\ref\Teste1.dll
