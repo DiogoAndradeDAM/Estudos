@@ -7,5 +7,5 @@ int main(){
     p1.age = 16;
     p2.age = 4;
 
-    printf("%d", soma(p1.age, 4));
+    printf("%d", p1.age);
 }

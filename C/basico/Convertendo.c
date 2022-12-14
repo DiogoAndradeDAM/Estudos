@@ -11,7 +11,7 @@ int main(){
 
   //Conversão do tipo int para string
   //sprintf(str2, "%d[^\n]", tam); //Forma básica com [variavel char] que recebe o tipo numero [tipo numerico] [variavel numerica]
-  snprintf(str2, 10, "%d[^\n]", tam); //Forma mais complexa que possui um limitador de caracteres máximo, neste caso 10
+  snprintf(str2, 10, "%d", tam); //Forma mais complexa que possui um limitador de caracteres máximo, neste caso 10
 
   strcat(str1, str2); //Concatena as strings
 

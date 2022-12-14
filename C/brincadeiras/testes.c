@@ -1,12 +1,28 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
+#include <time.h>
 
-int main(int argc, char *argv)
+int ** set_multarray(size_t s1, size_t s2){
+    int **mat = (int**) calloc(s1, sizeof(int*)), i;
+    //mat = (int**) calloc(s1, sizeof(int*));
+    for(i=0; i<s2; i++) *(mat + i) = (int*) calloc(s2, sizeof(int));
+
+    return mat;
+}
+
+int main (void)
 {
-    char *text = (char*) malloc(30);
-    scanf("%30[^\n]s", text);
-    printf("%s\n", text);
-    printf("%d", strlen(text));
-    free(text);
+    int **mymat = set_multarray(5,5), i, j;
+
+    srand(time(NULL));
+
+    for(i=0; i<5; i++){
+        for(j=0; j<5; j++){
+            *(*(mymat+i)+j) = (rand() % 10);
+            printf("%d ", *(*(mymat+i)+j));
+        }
+        putc('\n', stdout);
+    }
+
+    return 0;
 }

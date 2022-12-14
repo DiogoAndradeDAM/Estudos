@@ -25,11 +25,11 @@ int main()
   //size_t t = strxfrm(char *dest, char *orig, size_t n); //Copia o valor da *orig para *dest e a quantidade de caracteres passados será ser retorno, com o máximo de caracteres passados sendo limitados por n
   strcat(palavras3, palavras2);//adiciona o conteudo da segunda string na primeira, mas só pode receber vetores
   //Procura um caracter em uma string (ambas retornam um ponteiro)
-  printf("%d\n", strcspn(palavras3, "aid")); //Retona um valor natural referente a posição de vetor da primeira ocorrencia de um dos caracteres da segunda string (parecido ao strstr(), mas separa os caracteres)
+  printf("%d\n", strcspn(palavras3, "aid")); //Retorna um valor natural referente a posição de vetor da primeira ocorrencia de um dos caracteres da segunda string (parecido ao strstr(), mas separa os caracteres)
   //Quando o valor não é encontrado retorna a posição de vetor do caracter nulo
   printf("%c\n", strpbrk(palavras3, "aid")); //Retorna o primeiro caracter da segunda string que ocorre na primeira string, neste caso "d". Retorna NULL caso o nenhum caracter ocorra
 
-  printf("%d\n", strspn(palavras2, "aba")); //Retorna um valor natural referente a quantidade de caracteres que na ordem da segunda string2 ocorreram na primeira string, parando a contagem no primeiro caracter diferente
+  printf("%d\n", strspn(palavras2, "A")); //Retorna um valor natural referente a quantidade de caracteres que na ordem da segunda string2 ocorreram na primeira string, parando a contagem no primeiro caracter diferente
 
   letra = strchr(palavras2, 'a');   // Retorna a primeira ocorrência
   strrchr(palavras2, 'a'); //Retorna a última ocorrência
