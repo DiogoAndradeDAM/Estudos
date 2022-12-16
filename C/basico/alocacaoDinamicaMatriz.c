@@ -27,5 +27,10 @@ int main(){
     free(mat[i]);
   free(mat);
   
+    for(i=0; i<5; i++){
+    for(j=0; j<5; j++)
+      printf("%2d ", *(*(mat+i)+j));
+    printf("\n");
+  }
   return 0;
 }

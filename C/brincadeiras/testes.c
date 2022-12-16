@@ -2,27 +2,30 @@
 #include <stdlib.h>
 #include <time.h>
 
-int ** set_multarray(size_t s1, size_t s2){
-    int **mat = (int**) calloc(s1, sizeof(int*)), i;
-    //mat = (int**) calloc(s1, sizeof(int*));
-    for(i=0; i<s2; i++) *(mat + i) = (int*) calloc(s2, sizeof(int));
-
+int** alocate_mat(size_t s1, size_t s2){
+    int **mat = (int**) calloc(s1, sizeof(int*));
+    for(int i=0; i<s1; i++) *(mat+i) = (int*) calloc(s2, sizeof(int));
     return mat;
 }
 
-int main (void)
+void desalocate_mat(int **mat, size_t s){
+    for(int i=0; i<s; i++) free(*(mat+i));
+    free(mat);
+}
+
+int main(int argc, char* argv)
 {
-    int **mymat = set_multarray(5,5), i, j;
-
+    int **mat = alocate_mat(5,5);
+    int i, j;
     srand(time(NULL));
-
     for(i=0; i<5; i++){
-        for(j=0; j<5; j++){
-            *(*(mymat+i)+j) = (rand() % 10);
-            printf("%d ", *(*(mymat+i)+j));
-        }
-        putc('\n', stdout);
+        for(j=0; j<5; j++) *(*(mat+i)+j) = rand() % 10;
     }
 
-    return 0;
+    for(i=0; i<5; i++){
+        for(j=0; j<5; j++) printf("%d ", *(*(mat+i)+j));
+        printf("\n");
+    }
+
+    desalocate_mat(mat, 5);
 }
