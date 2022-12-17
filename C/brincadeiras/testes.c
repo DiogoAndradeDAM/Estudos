@@ -1,31 +1,62 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <time.h>
 
-int** alocate_mat(size_t s1, size_t s2){
-    int **mat = (int**) calloc(s1, sizeof(int*));
-    for(int i=0; i<s1; i++) *(mat+i) = (int*) calloc(s2, sizeof(int));
-    return mat;
+struct Node{
+    struct Node *next;
+    int value;
+};
+
+struct Stack{
+    struct Node *top;
+    int tam;
+    void (*push)(struct Stack*, int);
+    void (*popnr)(struct Stack*);
+    struct Node* (*popr)(struct Stack*);
+};
+
+void push_Stack(struct Stack *self, int v){
+    struct Node *new = (struct Node*) malloc(sizeof(struct Node));
+    if(new){
+        new->value = v;
+        new->next = self->top;
+        self->top = new;
+        self->tam++;
+    }
 }
 
-void desalocate_mat(int **mat, size_t s){
-    for(int i=0; i<s; i++) free(*(mat+i));
-    free(mat);
+void pop_Stacknr(struct Stack *self){
+    if(self->top){
+        struct Node *rm = self->top;
+        self->top = rm->next;
+        self->tam--;
+        free(rm);
+    }else self->top = NULL;
 }
 
-int main(int argc, char* argv)
+struct Node* pop_Stackr(struct Stack *self){
+    if(self->top){
+    struct Node *rm = self->top;
+        self->top = rm->next;
+        self->tam--;
+        return rm;
+    }else return NULL;
+}
+
+void new_Stack(struct Stack *self){
+    self->tam = 0;
+    self->top = NULL;
+    self->push = &push_Stack;
+    self->popnr = &pop_Stacknr;
+    self->popr = &pop_Stackr;
+}
+
+int main()
 {
-    int **mat = alocate_mat(5,5);
-    int i, j;
-    srand(time(NULL));
-    for(i=0; i<5; i++){
-        for(j=0; j<5; j++) *(*(mat+i)+j) = rand() % 10;
-    }
-
-    for(i=0; i<5; i++){
-        for(j=0; j<5; j++) printf("%d ", *(*(mat+i)+j));
-        printf("\n");
-    }
-
-    desalocate_mat(mat, 5);
+    struct Stack s;
+    new_Stack(&s);
+    s.push(&s, 10);
+    s.push(&s, 20);
+    printf("%d - ", s.top->value);
+    s.popnr(&s);
+    printf("%d", s.top->value);
 }
