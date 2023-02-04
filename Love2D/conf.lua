@@ -1,3 +1,3 @@
 function love.conf(t)
-    t.console = true
+    love.window.setTitle = "Teste Love2D"
 end
