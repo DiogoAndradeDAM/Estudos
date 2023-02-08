@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Content;
 
 namespace Testes;
 
@@ -8,7 +9,13 @@ public class Game1 : Game
 {
     private GraphicsDeviceManager _graphics;
     private SpriteBatch _spriteBatch;
-    private SpriteFont _fontGame;
+   // private SpriteFont _fontGame;
+
+   private Texture2D texture2d;
+
+   private ContentManager content;
+
+    private Hero hero;
 
     public int score;
     public bool mbLeftIsPressed = false;
@@ -37,7 +44,9 @@ public class Game1 : Game
 
         // TODO: use this.Content to load your game content here
 
-        _fontGame = Content.Load<SpriteFont>("galleryFont");
+       // _fontGame = Content.Load<SpriteFont>("galleryFont");
+        hero = new Hero("ragozineHead", new Vector2(100, 100), new Vector2(200,200));
+        texture2d = content.Load<Texture2D>("ragozineHead");
     }
 
     protected override void Update(GameTime gameTime)
@@ -54,6 +63,8 @@ public class Game1 : Game
             mbLeftIsPressed = false;
         }
 
+        hero.Update();
+
         base.Update(gameTime);
     }
 
@@ -64,7 +75,8 @@ public class Game1 : Game
         // TODO: Add your drawing code here
 
         _spriteBatch.Begin();
-        _spriteBatch.DrawString(_fontGame, score.ToString(), new Vector2(100, 100), Color.White);
+        //_spriteBatch.DrawString(_fontGame, score.ToString(), new Vector2(100, 100), Color.White);
+        _spriteBatch.Draw(texture2d, new Vector2(100, 100), null, Color.White);
         _spriteBatch.End();
 
         base.Draw(gameTime);
