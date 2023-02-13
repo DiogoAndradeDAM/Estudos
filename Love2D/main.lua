@@ -9,6 +9,8 @@ function love.load()
     Movey = 0
 
     Spd = 5
+
+    love.window.setFullscreen(true, "desktop")
 end
 
 function love.update(dt)
