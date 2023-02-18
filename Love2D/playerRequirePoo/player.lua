@@ -4,8 +4,8 @@ Player = {name = "", x=0, y=0, xsize=0, ysize=0, color={1,0,0}, hsdp=0, vspd=0, 
 
 function Player:new(o, name, x, y, xsize, ysize, color, spd)
     o = o or {}
-    setmetatable(o, self)
-    self.__index = self
+    setmetatable(o, {__index = self})
+    --self.__index = self
     self.name = name or "none"
     self.x = x or 0
     self.y = y or 0
@@ -40,8 +40,8 @@ function Player:newPosition(newx, newy)
 end
 
 function Player:getKeyboardMoviment()
-    self.hspd = ( Globals.btonum(love.keyboard.isDown("right")) - Globals.btonum(love.keyboard.isDown("left")) )
-    self.vspd = ( Globals.btonum(love.keyboard.isDown("down")) - Globals.btonum(love.keyboard.isDown("up")) )
+    self.hspd = ( Globals.btonum(love.keyboard.isDown("right", "d")) - Globals.btonum(love.keyboard.isDown("left", "a")) )
+    self.vspd = ( Globals.btonum(love.keyboard.isDown("down", "s")) - Globals.btonum(love.keyboard.isDown("up", "w")) )
 end
 
 function Player:moviment()
