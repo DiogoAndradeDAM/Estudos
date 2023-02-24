@@ -9,7 +9,7 @@ function love.load()
             frame = 1,
             maxFrames = 4,
             speed = 2,
-            timer = 0.1
+            timer = 0
         }
     }
 
@@ -45,7 +45,7 @@ function love.update(dt)
         pingo.animation.timer = pingo.animation.timer + dt
 
         if pingo.animation.timer > 0.2 then
-            pingo.animation.timer = 0.1
+            pingo.animation.timer = 0
 
             pingo.animation.frame = pingo.animation.frame + 1
 
@@ -58,7 +58,7 @@ function love.update(dt)
 end
 
 function love.draw()
-    love.graphics.setBackgroundColor(0.2, 0.6, 1)
+    love.graphics.setBackgroundColor(0.8, 0.8, 1)
     love.graphics.scale(3)
 
     love.graphics.draw(pingo.sprite, quads[pingo.animation.frame], pingo.x, pingo.y)
