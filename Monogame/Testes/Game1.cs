@@ -1,7 +1,7 @@
-﻿using Microsoft.Xna.Framework;
+﻿using System;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-using Microsoft.Xna.Framework.Content;
 
 namespace Testes;
 
@@ -9,26 +9,15 @@ public class Game1 : Game
 {
     private GraphicsDeviceManager _graphics;
     private SpriteBatch _spriteBatch;
-   // private SpriteFont _fontGame;
 
-   private Texture2D texture2d;
-
-   private ContentManager content;
-
-    private Hero hero;
-
-    public int score;
-    public bool mbLeftIsPressed = false;
+    public Texture2D textura;
+    public Vector2 playerPosition;
 
     public Game1()
     {
         _graphics = new GraphicsDeviceManager(this);
         Content.RootDirectory = "Content";
         IsMouseVisible = true;
-
-        _graphics.PreferredBackBufferWidth = 1280;  // set this value to the desired width of your window
-        _graphics.PreferredBackBufferHeight = 920;   // set this value to the desired height of your window
-        _graphics.ApplyChanges();
     }
 
     protected override void Initialize()
@@ -36,6 +25,8 @@ public class Game1 : Game
         // TODO: Add your initialization logic here
 
         base.Initialize();
+
+        playerPosition = new Vector2(_graphics.PreferredBackBufferWidth/2, _graphics.PreferredBackBufferHeight/2);
     }
 
     protected override void LoadContent()
@@ -44,26 +35,26 @@ public class Game1 : Game
 
         // TODO: use this.Content to load your game content here
 
-       // _fontGame = Content.Load<SpriteFont>("galleryFont");
-        hero = new Hero("ragozineHead", new Vector2(100, 100), new Vector2(200,200));
-        texture2d = content.Load<Texture2D>("ragozineHead");
+        textura = Content.Load<Texture2D>("Player");
     }
 
     protected override void Update(GameTime gameTime)
     {
         if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
             Exit();
+
         // TODO: Add your update logic here
-
-        if (Mouse.GetState().LeftButton == ButtonState.Pressed && !mbLeftIsPressed){
-            score++;
-            mbLeftIsPressed = true;
+        if (Keyboard.GetState().IsKeyDown(Keys.A)){
+            playerPosition.X -= 10;
+        } else if (Keyboard.GetState().IsKeyDown(Keys.D)){
+            playerPosition.X += 10;
         }
-        if (Mouse.GetState().LeftButton == ButtonState.Released){
-            mbLeftIsPressed = false;
+        if (Keyboard.GetState().IsKeyDown(Keys.W)){
+            playerPosition.Y -= 10;
+        } else if (Keyboard.GetState().IsKeyDown(Keys.S)){
+            playerPosition.Y += 10;
         }
 
-        hero.Update();
 
         base.Update(gameTime);
     }
@@ -73,10 +64,10 @@ public class Game1 : Game
         GraphicsDevice.Clear(Color.CornflowerBlue);
 
         // TODO: Add your drawing code here
-
         _spriteBatch.Begin();
-        //_spriteBatch.DrawString(_fontGame, score.ToString(), new Vector2(100, 100), Color.White);
-        _spriteBatch.Draw(texture2d, new Vector2(100, 100), null, Color.White);
+
+        _spriteBatch.Draw(textura, playerPosition, null, Color.White, 0f, Vector2.Zero, 2f, SpriteEffects.None, 0f);
+
         _spriteBatch.End();
 
         base.Draw(gameTime);
