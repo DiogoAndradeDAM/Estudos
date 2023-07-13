@@ -1,1 +1,5 @@
-setmetatable()
+tableTime = {year=0, month=0, day=0}
+
+os.time(tableTime)
+
+print(tableTime)

@@ -14,3 +14,4 @@ io.write(table.concat(aTable, ",").."\n")
 table.remove(aTable, 1)
 io.write(table.concat(aTable, ",").."\n")
 
+
