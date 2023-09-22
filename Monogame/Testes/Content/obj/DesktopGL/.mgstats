@@ -1,0 +1,4 @@
+Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
+"C:/Programacao/Estudos/Monogame/Testes/Content/Font/Arial3.spritefont","C:/Programacao/Estudos/Monogame/Testes/Content/bin/DesktopGL/Font/Arial3.xnb","LocalizedFontProcessor","SpriteFontContent",2497,937,1,0437917
+"C:/Programacao/Estudos/Monogame/Testes/Content/Font/Arial4.spritefont","C:/Programacao/Estudos/Monogame/Testes/Content/bin/DesktopGL/Font/Arial4.xnb","FontDescriptionProcessor","SpriteFontContent",2068,21535,0,1153901
+"C:/Programacao/Estudos/Monogame/Testes/Content/Sprites/ragozineHead.png","C:/Programacao/Estudos/Monogame/Testes/Content/bin/DesktopGL/Sprites/ragozini.xnb","TextureProcessor","Texture2DContent",6495,16469,0,2310759
