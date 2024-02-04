@@ -15,21 +15,37 @@ add [arquive]: adiciona arquivos e diretórios a stage area
 commit: faz um commit dos arquivos na stage area
 status: mostra o status das áreas do git
 log: mostra as versões do projeto na Commited area
-checkout [code version] *--* [*files*]: muda para qual versão o git está apontado(HEAD) referente ao código colocado. 
+checkout [code version] *--* [*files*]: muda para qual versão/branch esta sendo apontando. 
 Master no lugar do código, volta para a última versão
-clone [link]: clona um repositório do gitHub na máquina a partir do link dele
-push: leva arquivos do repositório local para o gitHub
+clone [link] *[new-name]: clona um repositório do gitHub na máquina a partir do link dele
+push *[alias [branch]]: leva arquivos do repositório local para o gitHub
 pull: traz arquivos do gitHub para o repositório local
 clean: Apaga os arquivos na working area e pode deletar arquivos
 restore: dicarta mudanças feitas em arquivos no ambiente de desenvolvimento
-revert: traz os arquivos de um commit na linha do tempo para o working staged
+revert: cria um novo commit com os arquivos e diretórios no estado da versão selecionada
+reset: retorna a main para uma versão e desfaz os commit feitos após ela, porém as alteração dos arquivos serão levadas a stage area.
+merge [branch]: mescla uma branch com a atual
+remote: cria um link com um repositório remoto
+
 show <hash>: Mostra alterações de commits antigos a partir de um hash
 }
+
+remote atributos:
+-v: mostra os repositórios remotos linkados
+add [alias] [link]: adiciona um link a um repositório remoto e cria uma apelido para ele
 
 commit atributos:
 -m: (message) adiciona uma mensagem ao commit;
 -a: (add) funciona igual ao comando 'add', mas só funciona para arquivos que já passaram pelo git
+--amend: altera informações do ultimo commit realizado
+--author="": Muda o nome do autor do commit. Recomenda-se adicionar o email tmb
 
+branch atributos:
+-d: deleta uma branch se não houver commits
+-D: deleta uma branch independete do que tenha
+
+reset atributos:
+--hard: deleta todos os commit e mudanças
 
 restore atributos:
 --staged: retira arquivos da stage area
@@ -41,6 +57,8 @@ clean opções:
 log opções:
 -oneline: resume o que seria mostrado no log em uma linha para cada item
 
+checkout atributos:
+-b: cria uma branch e troca para ela
 
 revert opções:
 HEAD~n: Partirá da HEAD para outro commit abaixo da HEAD atual baseado no valor de 'n'

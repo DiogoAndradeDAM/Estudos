@@ -1,5 +1,0 @@
-C:\Programacao\Estudos\C#\Lambda\obj\Debug\net6.0\Lambda.csproj.AssemblyReference.cache
-C:\Programacao\Estudos\C#\Lambda\obj\Debug\net6.0\Lambda.GeneratedMSBuildEditorConfig.editorconfig
-C:\Programacao\Estudos\C#\Lambda\obj\Debug\net6.0\Lambda.AssemblyInfoInputs.cache
-C:\Programacao\Estudos\C#\Lambda\obj\Debug\net6.0\Lambda.AssemblyInfo.cs
-C:\Programacao\Estudos\C#\Lambda\obj\Debug\net6.0\Lambda.csproj.CoreCompileInputs.cache
